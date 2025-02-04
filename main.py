@@ -1,5 +1,5 @@
 from PyQt6 import QtWidgets
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QGridLayout, QWidget, QLineEdit, QComboBox, QSpinBox
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QGridLayout, QWidget, QLineEdit, QComboBox, QSpinBox, QRadioButton, QButtonGroup
 from PyQt6.QtGui import QIcon, QFont
 from PyQt6.QtCore import Qt
 import sys
@@ -36,6 +36,14 @@ class MainWindow(QMainWindow):
 
         """ 
         self.spinBox = QSpinBox() <--- for int
+        
+        self.choiceCourses = QButtonGroup()
+        self.radioButtonCCS = QRadioButton("CCS") <---- multiple choice
+        self.radioButtonCOE = QRadioButton("COE")
+
+        self.choiceCourses.addButton(self.radioButtonCCS) <---- multiple choice
+        self.choiceCourses.addButton(self.radioButtonCOE)
+        ###need ni iadd manually each button sa mainLayout.addWidget!!!!
 
         self.comboBox = QComboBox()
         self.comboBox.addItem("CCS")
