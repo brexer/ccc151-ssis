@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="imgs">
+    <file>imgs/add.png</file>
+    <file>imgs/delete.png</file>
+    <file>imgs/edit.png</file>
     <file>imgs/college.png</file>
     <file>imgs/home.png</file>
     <file>imgs/menu.png</file>
