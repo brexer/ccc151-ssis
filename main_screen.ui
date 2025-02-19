@@ -29,12 +29,28 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Student Information System</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">full_menu_widget {
+	background-color: lightblue;
+	color: red
+
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_15">
     <item>
      <widget class="QWidget" name="icon_only_widget" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: #272727;
+color: #E7ECEF;
+
+QPushButton {
+background: transparent;
+border: none;
+}</string>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <property name="spacing">
         <number>0</number>
@@ -72,7 +88,7 @@
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/imgs/imgs/home.png</normaloff>:/imgs/imgs/home.png</iconset>
+             <normaloff>:/imgs/imgs/home_fixed.png</normaloff>:/imgs/imgs/home_fixed.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -90,14 +106,29 @@
           <number>0</number>
          </property>
          <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>10</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
           <widget class="QPushButton" name="studentButton1">
            <property name="text">
             <string/>
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/imgs/imgs/student.png</normaloff>
-             <normalon>:/imgs/imgs/student.png</normalon>:/imgs/imgs/student.png</iconset>
+             <normaloff>:/imgs/imgs/student_transparent.png</normaloff>:/imgs/imgs/student_transparent.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -120,8 +151,7 @@
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/imgs/imgs/program.png</normaloff>
-             <normalon>:/imgs/imgs/program.png</normalon>:/imgs/imgs/program.png</iconset>
+             <normaloff>:/imgs/imgs/program_fixed.png</normaloff>:/imgs/imgs/program_fixed.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -144,8 +174,7 @@
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/imgs/imgs/college.png</normaloff>
-             <normalon>:/imgs/imgs/college.png</normalon>:/imgs/imgs/college.png</iconset>
+             <normaloff>:/imgs/imgs/college_white_transparent.png</normaloff>:/imgs/imgs/college_white_transparent.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -184,7 +213,31 @@
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #272727;
+color: #E7ECEF;
+
+QPushButton {
+background: transparent;
+border: none;
+}</string>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <property name="spacing">
@@ -209,7 +262,7 @@
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/imgs/imgs/home.png</normaloff>:/imgs/imgs/home.png</iconset>
+             <normaloff>:/imgs/imgs/home_fixed.png</normaloff>:/imgs/imgs/home_fixed.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -227,6 +280,22 @@
           <number>0</number>
          </property>
          <item>
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>10</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
           <widget class="QPushButton" name="studentButton2">
            <property name="font">
             <font>
@@ -235,12 +304,15 @@
              <bold>false</bold>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="text">
             <string>Student</string>
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/imgs/imgs/student.png</normaloff>:/imgs/imgs/student.png</iconset>
+             <normaloff>:/imgs/imgs/student_transparent.png</normaloff>:/imgs/imgs/student_transparent.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -269,7 +341,7 @@
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/imgs/imgs/program.png</normaloff>:/imgs/imgs/program.png</iconset>
+             <normaloff>:/imgs/imgs/program_fixed.png</normaloff>:/imgs/imgs/program_fixed.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -298,7 +370,7 @@
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/imgs/imgs/college.png</normaloff>:/imgs/imgs/college.png</iconset>
+             <normaloff>:/imgs/imgs/college_white_transparent.png</normaloff>:/imgs/imgs/college_white_transparent.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -343,6 +415,15 @@
            <height>40</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #272727;
+color: #E7ECEF;
+
+QPushButton {
+background: transparent;
+border: none;
+}</string>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="QPushButton" name="menuButton">
@@ -369,8 +450,7 @@
             </property>
             <property name="icon">
              <iconset resource="resources.qrc">
-              <normaloff>:/imgs/imgs/menu.png</normaloff>
-              <normalon>:/imgs/imgs/menu.png</normalon>:/imgs/imgs/menu.png</iconset>
+              <normaloff>:/imgs/imgs/menu_fixed.png</normaloff>:/imgs/imgs/menu_fixed.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -435,7 +515,7 @@
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="mainPage">
           <layout class="QGridLayout" name="gridLayout_2"/>
@@ -802,8 +882,8 @@
                       <rect>
                        <x>110</x>
                        <y>210</y>
-                       <width>69</width>
-                       <height>22</height>
+                       <width>91</width>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -812,8 +892,8 @@
                       <rect>
                        <x>110</x>
                        <y>170</y>
-                       <width>69</width>
-                       <height>22</height>
+                       <width>91</width>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -822,8 +902,8 @@
                       <rect>
                        <x>110</x>
                        <y>130</y>
-                       <width>69</width>
-                       <height>22</height>
+                       <width>91</width>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -833,7 +913,7 @@
                        <x>110</x>
                        <y>90</y>
                        <width>161</width>
-                       <height>22</height>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -843,7 +923,7 @@
                        <x>110</x>
                        <y>50</y>
                        <width>161</width>
-                       <height>22</height>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -853,7 +933,7 @@
                        <x>110</x>
                        <y>10</y>
                        <width>161</width>
-                       <height>22</height>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -863,7 +943,7 @@
                        <x>10</x>
                        <y>10</y>
                        <width>71</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -882,7 +962,7 @@
                        <x>10</x>
                        <y>50</y>
                        <width>71</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -901,7 +981,7 @@
                        <x>10</x>
                        <y>90</y>
                        <width>71</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -920,7 +1000,7 @@
                        <x>10</x>
                        <y>130</y>
                        <width>71</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -939,7 +1019,7 @@
                        <x>10</x>
                        <y>170</y>
                        <width>71</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -958,7 +1038,7 @@
                        <x>10</x>
                        <y>210</y>
                        <width>71</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -1349,8 +1429,8 @@
                       <rect>
                        <x>110</x>
                        <y>90</y>
-                       <width>69</width>
-                       <height>22</height>
+                       <width>91</width>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -1360,7 +1440,7 @@
                        <x>110</x>
                        <y>50</y>
                        <width>161</width>
-                       <height>22</height>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -1370,7 +1450,7 @@
                        <x>110</x>
                        <y>10</y>
                        <width>161</width>
-                       <height>22</height>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -1380,7 +1460,7 @@
                        <x>10</x>
                        <y>10</y>
                        <width>101</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -1399,7 +1479,7 @@
                        <x>10</x>
                        <y>50</y>
                        <width>101</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -1418,7 +1498,7 @@
                        <x>10</x>
                        <y>90</y>
                        <width>101</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -1805,7 +1885,7 @@
                        <x>110</x>
                        <y>50</y>
                        <width>161</width>
-                       <height>22</height>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -1815,7 +1895,7 @@
                        <x>110</x>
                        <y>10</y>
                        <width>161</width>
-                       <height>22</height>
+                       <height>31</height>
                       </rect>
                      </property>
                     </widget>
@@ -1825,7 +1905,7 @@
                        <x>10</x>
                        <y>10</y>
                        <width>101</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">
@@ -1844,7 +1924,7 @@
                        <x>10</x>
                        <y>50</y>
                        <width>101</width>
-                       <height>21</height>
+                       <height>31</height>
                       </rect>
                      </property>
                      <property name="font">

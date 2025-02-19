@@ -1,0 +1,29 @@
+#widget {
+    background-color: #272727;
+    color: #E7ECEF;
+
+    QPushButton {
+        background: transparent;
+        border: none;
+}
+}
+
+#full_menu_widget {
+    background-color: #272727;
+    color: #E7ECEF;
+
+    QPushButton {
+        background: transparent;
+        border: none;
+}
+}
+
+#icon_only_widget {
+    background-color: #272727;
+    color: #E7ECEF;
+
+    QPushButton {
+        background: transparent;
+        border: none;
+}
+}
