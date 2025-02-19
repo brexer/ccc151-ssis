@@ -38,8 +38,26 @@
 
 }</string>
   </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_15">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QWidget" name="icon_only_widget" native="true">
       <property name="styleSheet">
@@ -95,6 +113,12 @@ border: none;
              <width>40</width>
              <height>40</height>
             </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -227,13 +251,13 @@ border: none;
         <number>0</number>
        </property>
        <property name="leftMargin">
-        <number>20</number>
+        <number>0</number>
        </property>
        <property name="topMargin">
         <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>20</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
         <number>0</number>
@@ -244,7 +268,7 @@ border: none;
           <number>6</number>
          </property>
          <item>
-          <widget class="QPushButton" name="homeButton1_2">
+          <widget class="QPushButton" name="homeButton2">
            <property name="minimumSize">
             <size>
              <width>50</width>
@@ -269,6 +293,12 @@ border: none;
              <width>40</width>
              <height>40</height>
             </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -297,6 +327,12 @@ border: none;
          </item>
          <item>
           <widget class="QPushButton" name="studentButton2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="font">
             <font>
              <family>Verdana</family>
@@ -407,6 +443,21 @@ border: none;
     <item>
      <widget class="QWidget" name="widget_3" native="true">
       <layout class="QGridLayout" name="gridLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <item row="0" column="0" colspan="2">
         <widget class="QWidget" name="widget" native="true">
          <property name="minimumSize">
@@ -515,10 +566,18 @@ border: none;
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="mainPage">
-          <layout class="QGridLayout" name="gridLayout_2"/>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>HOME</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="studentPage">
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -658,7 +717,7 @@ border: none;
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_38">
                       <item>
-                       <widget class="QPushButton" name="pushButton_42">
+                       <widget class="QPushButton" name="pushButton_52">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                           <horstretch>0</horstretch>
@@ -688,7 +747,7 @@ border: none;
                          <bool>true</bool>
                         </property>
                         <property name="autoExclusive">
-                         <bool>false</bool>
+                         <bool>true</bool>
                         </property>
                        </widget>
                       </item>
@@ -1220,7 +1279,7 @@ border: none;
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_40">
                       <item>
-                       <widget class="QPushButton" name="pushButton_45">
+                       <widget class="QPushButton" name="pushButton_51">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                           <horstretch>0</horstretch>
@@ -1250,7 +1309,7 @@ border: none;
                          <bool>true</bool>
                         </property>
                         <property name="autoExclusive">
-                         <bool>false</bool>
+                         <bool>true</bool>
                         </property>
                        </widget>
                       </item>
@@ -1680,7 +1739,7 @@ border: none;
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_42">
                       <item>
-                       <widget class="QPushButton" name="pushButton_48">
+                       <widget class="QPushButton" name="pushButton_53">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                           <horstretch>0</horstretch>
@@ -1710,7 +1769,7 @@ border: none;
                          <bool>true</bool>
                         </property>
                         <property name="autoExclusive">
-                         <bool>false</bool>
+                         <bool>true</bool>
                         </property>
                        </widget>
                       </item>
@@ -1987,8 +2046,8 @@ border: none;
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>239</x>
-     <y>51</y>
+     <x>238</x>
+     <y>66</y>
     </hint>
     <hint type="destinationlabel">
      <x>22</x>
@@ -2003,8 +2062,8 @@ border: none;
    <slot>setHidden(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>239</x>
-     <y>51</y>
+     <x>238</x>
+     <y>66</y>
     </hint>
     <hint type="destinationlabel">
      <x>79</x>
@@ -2019,12 +2078,12 @@ border: none;
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>32</x>
-     <y>70</y>
+     <x>42</x>
+     <y>109</y>
     </hint>
     <hint type="destinationlabel">
-     <x>163</x>
-     <y>114</y>
+     <x>173</x>
+     <y>109</y>
     </hint>
    </hints>
   </connection>
@@ -2055,8 +2114,8 @@ border: none;
      <y>175</y>
     </hint>
     <hint type="destinationlabel">
-     <x>182</x>
-     <y>190</y>
+     <x>173</x>
+     <y>185</y>
     </hint>
    </hints>
   </connection>
@@ -2099,8 +2158,8 @@ border: none;
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>182</x>
-     <y>190</y>
+     <x>173</x>
+     <y>185</y>
     </hint>
     <hint type="destinationlabel">
      <x>53</x>
@@ -2109,98 +2168,82 @@ border: none;
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_42</sender>
-   <signal>toggled(bool)</signal>
+   <sender>pushButton_52</sender>
+   <signal>clicked(bool)</signal>
    <receiver>widget_10</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>609</x>
-     <y>132</y>
+     <x>595</x>
+     <y>131</y>
     </hint>
     <hint type="destinationlabel">
-     <x>901</x>
+     <x>858</x>
+     <y>106</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_51</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>widget_11</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>600</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>972</x>
+     <y>106</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_53</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>widget_12</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>595</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>847</x>
      <y>105</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_42</sender>
+   <sender>homeButton1</sender>
    <signal>toggled(bool)</signal>
-   <receiver>widget_10</receiver>
-   <slot>setHidden(bool)</slot>
+   <receiver>homeButton2</receiver>
+   <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>597</x>
-     <y>137</y>
+     <x>44</x>
+     <y>40</y>
     </hint>
     <hint type="destinationlabel">
-     <x>913</x>
-     <y>104</y>
+     <x>114</x>
+     <y>33</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_48</sender>
+   <sender>homeButton2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>widget_12</receiver>
-   <slot>setVisible(bool)</slot>
+   <receiver>homeButton1</receiver>
+   <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>610</x>
-     <y>127</y>
+     <x>131</x>
+     <y>52</y>
     </hint>
     <hint type="destinationlabel">
-     <x>948</x>
-     <y>105</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_48</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>widget_12</receiver>
-   <slot>setHidden(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>597</x>
-     <y>140</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>958</x>
-     <y>107</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_45</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>widget_11</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>608</x>
-     <y>132</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>926</x>
-     <y>104</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_45</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>widget_11</receiver>
-   <slot>setHidden(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>613</x>
-     <y>140</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>933</x>
-     <y>107</y>
+     <x>35</x>
+     <y>49</y>
     </hint>
    </hints>
   </connection>
