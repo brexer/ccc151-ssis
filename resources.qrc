@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="imgs">
+    <file>imgs/add_white.png</file>
+    <file>imgs/delete_white.png</file>
+    <file>imgs/edit_white.png</file>
+    <file>imgs/search_white.png</file>
     <file>imgs/home_fixed.png</file>
     <file>imgs/menu_fixed.png</file>
     <file>imgs/program_fixed.png</file>

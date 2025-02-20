@@ -20,11 +20,25 @@ class Ui_MainWindow(object):
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(1155, 600))
         MainWindow.setMaximumSize(QtCore.QSize(1155, 600))
-        MainWindow.setStyleSheet("full_menu_widget {\n"
-"    background-color: lightblue;\n"
-"    color: red\n"
+        MainWindow.setStyleSheet("\n"
+"#widget, #icon_only_widget, #full_menu_widget {\n"
+"    background-color: #272727;\n"
+"}\n"
 "\n"
-"}")
+"QPushButton {\n"
+"    background: transparent;\n"
+"    border: none;\n"
+"    color: #E7ECEF;\n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #E7ECEF;\n"
+"}\n"
+"\n"
+"#frame_11, #frame_13, #frame_8, #frame_10, #frame_9, #frame_7 {\n"
+"    background-color: #272727;\n"
+"}\n"
+"")
         MainWindow.setAnimated(True)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -33,13 +47,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.setSpacing(0)
         self.horizontalLayout_15.setObjectName("horizontalLayout_15")
         self.icon_only_widget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.icon_only_widget.setStyleSheet("background-color: #272727;\n"
-"color: #E7ECEF;\n"
-"\n"
-"QPushButton {\n"
-"background: transparent;\n"
-"border: none;\n"
-"}")
+        self.icon_only_widget.setStyleSheet("")
         self.icon_only_widget.setObjectName("icon_only_widget")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.icon_only_widget)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -101,13 +109,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.addWidget(self.icon_only_widget)
         self.full_menu_widget = QtWidgets.QWidget(parent=self.centralwidget)
         self.full_menu_widget.setAutoFillBackground(False)
-        self.full_menu_widget.setStyleSheet("background-color: #272727;\n"
-"color: #E7ECEF;\n"
-"\n"
-"QPushButton {\n"
-"background: transparent;\n"
-"border: none;\n"
-"}")
+        self.full_menu_widget.setStyleSheet("")
         self.full_menu_widget.setObjectName("full_menu_widget")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.full_menu_widget)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -184,13 +186,7 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.widget = QtWidgets.QWidget(parent=self.widget_3)
         self.widget.setMinimumSize(QtCore.QSize(0, 40))
-        self.widget.setStyleSheet("background-color: #272727;\n"
-"color: #E7ECEF;\n"
-"\n"
-"QPushButton {\n"
-"background: transparent;\n"
-"border: none;\n"
-"}")
+        self.widget.setStyleSheet("")
         self.widget.setObjectName("widget")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.widget)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
@@ -306,9 +302,7 @@ class Ui_MainWindow(object):
         self.searchButton_16.setSizePolicy(sizePolicy)
         self.searchButton_16.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/icon/icon/search-13-48.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon5.addPixmap(QtGui.QPixmap(":/imgs/imgs/search.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        icon5.addPixmap(QtGui.QPixmap(":/imgs/imgs/search.png"), QtGui.QIcon.Mode.Disabled, QtGui.QIcon.State.Off)
+        icon5.addPixmap(QtGui.QPixmap(":/imgs/imgs/search_white.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.searchButton_16.setIcon(icon5)
         self.searchButton_16.setIconSize(QtCore.QSize(20, 20))
         self.searchButton_16.setObjectName("searchButton_16")
@@ -330,7 +324,7 @@ class Ui_MainWindow(object):
         self.pushButton_52.setFont(font)
         self.pushButton_52.setText("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/imgs/imgs/add.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon6.addPixmap(QtGui.QPixmap(":/imgs/imgs/add_white.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_52.setIcon(icon6)
         self.pushButton_52.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_52.setCheckable(True)
@@ -349,7 +343,7 @@ class Ui_MainWindow(object):
         self.pushButton_43.setFont(font)
         self.pushButton_43.setText("")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(":/imgs/imgs/edit.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon7.addPixmap(QtGui.QPixmap(":/imgs/imgs/edit_white.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_43.setIcon(icon7)
         self.pushButton_43.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_43.setObjectName("pushButton_43")
@@ -366,7 +360,7 @@ class Ui_MainWindow(object):
         self.pushButton_44.setFont(font)
         self.pushButton_44.setText("")
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap(":/imgs/imgs/delete.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon8.addPixmap(QtGui.QPixmap(":/imgs/imgs/delete_white.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_44.setIcon(icon8)
         self.pushButton_44.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_44.setObjectName("pushButton_44")
@@ -399,16 +393,34 @@ class Ui_MainWindow(object):
         self.tableWidget_4.setColumnCount(6)
         self.tableWidget_4.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_4.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_4.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_4.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_4.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_4.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_4.setHorizontalHeaderItem(5, item)
         self.verticalLayout_17.addWidget(self.tableWidget_4)
         self.horizontalLayout_10.addWidget(self.frame_7)
@@ -658,10 +670,19 @@ class Ui_MainWindow(object):
         self.tableWidget_5.setColumnCount(3)
         self.tableWidget_5.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_5.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_5.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_5.setHorizontalHeaderItem(2, item)
         self.verticalLayout_19.addWidget(self.tableWidget_5)
         self.horizontalLayout_12.addWidget(self.frame_10)
@@ -881,8 +902,14 @@ class Ui_MainWindow(object):
         self.tableWidget_6.setColumnCount(2)
         self.tableWidget_6.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_6.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
+        font = QtGui.QFont()
+        font.setFamily("Verdana")
+        item.setFont(font)
         self.tableWidget_6.setHorizontalHeaderItem(1, item)
         self.verticalLayout_21.addWidget(self.tableWidget_6)
         self.horizontalLayout_14.addWidget(self.frame_9)
@@ -946,7 +973,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
         self.menuButton.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.menuButton.toggled['bool'].connect(self.full_menu_widget.setHidden) # type: ignore
         self.studentButton1.toggled['bool'].connect(self.studentButton2.setChecked) # type: ignore

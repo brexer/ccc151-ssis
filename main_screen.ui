@@ -32,11 +32,25 @@
    <string>Student Information System</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">full_menu_widget {
-	background-color: lightblue;
-	color: red
+   <string notr="true">
+#widget, #icon_only_widget, #full_menu_widget {
+    background-color: #272727;
+}
 
-}</string>
+QPushButton {
+    background: transparent;
+    border: none;
+	color: #E7ECEF;
+}
+
+QLabel {
+    color: #E7ECEF;
+}
+
+#frame_11, #frame_13, #frame_8, #frame_10, #frame_9, #frame_7 {
+	background-color: #272727;
+}
+</string>
   </property>
   <property name="animated">
    <bool>true</bool>
@@ -61,13 +75,7 @@
     <item>
      <widget class="QWidget" name="icon_only_widget" native="true">
       <property name="styleSheet">
-       <string notr="true">background-color: #272727;
-color: #E7ECEF;
-
-QPushButton {
-background: transparent;
-border: none;
-}</string>
+       <string notr="true"/>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <property name="spacing">
@@ -238,13 +246,7 @@ border: none;
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #272727;
-color: #E7ECEF;
-
-QPushButton {
-background: transparent;
-border: none;
-}</string>
+       <string notr="true"/>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <property name="spacing">
@@ -467,13 +469,7 @@ border: none;
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: #272727;
-color: #E7ECEF;
-
-QPushButton {
-background: transparent;
-border: none;
-}</string>
+          <string notr="true"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
@@ -566,7 +562,7 @@ border: none;
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="mainPage">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -686,10 +682,8 @@ border: none;
                          <string/>
                         </property>
                         <property name="icon">
-                         <iconset>
-                          <normaloff>:/icon/icon/search-13-48.ico</normaloff>
-                          <normalon>:/imgs/imgs/search.png</normalon>
-                          <disabledoff>:/imgs/imgs/search.png</disabledoff>:/icon/icon/search-13-48.ico</iconset>
+                         <iconset resource="resources.qrc">
+                          <normaloff>:/imgs/imgs/search_white.png</normaloff>:/imgs/imgs/search_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -735,7 +729,7 @@ border: none;
                         </property>
                         <property name="icon">
                          <iconset resource="resources.qrc">
-                          <normaloff>:/imgs/imgs/add.png</normaloff>:/imgs/imgs/add.png</iconset>
+                          <normaloff>:/imgs/imgs/add_white.png</normaloff>:/imgs/imgs/add_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -770,7 +764,7 @@ border: none;
                         </property>
                         <property name="icon">
                          <iconset resource="resources.qrc">
-                          <normaloff>:/imgs/imgs/edit.png</normaloff>:/imgs/imgs/edit.png</iconset>
+                          <normaloff>:/imgs/imgs/edit_white.png</normaloff>:/imgs/imgs/edit_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -799,7 +793,7 @@ border: none;
                         </property>
                         <property name="icon">
                          <iconset resource="resources.qrc">
-                          <normaloff>:/imgs/imgs/delete.png</normaloff>:/imgs/imgs/delete.png</iconset>
+                          <normaloff>:/imgs/imgs/delete_white.png</normaloff>:/imgs/imgs/delete_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -861,30 +855,60 @@ border: none;
                     <property name="text">
                      <string>ID Number</string>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
+                    </property>
                    </column>
                    <column>
                     <property name="text">
                      <string>First Name</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
                     </property>
                    </column>
                    <column>
                     <property name="text">
                      <string>Last Name</string>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
+                    </property>
                    </column>
                    <column>
                     <property name="text">
                      <string>Gender</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
                     </property>
                    </column>
                    <column>
                     <property name="text">
                      <string>Year Level</string>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
+                    </property>
                    </column>
                    <column>
                     <property name="text">
                      <string>Program</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
                     </property>
                    </column>
                   </widget>
@@ -1248,10 +1272,8 @@ border: none;
                          <string/>
                         </property>
                         <property name="icon">
-                         <iconset>
-                          <normaloff>:/icon/icon/search-13-48.ico</normaloff>
-                          <normalon>:/imgs/imgs/search.png</normalon>
-                          <disabledoff>:/imgs/imgs/search.png</disabledoff>:/icon/icon/search-13-48.ico</iconset>
+                         <iconset resource="resources.qrc">
+                          <normaloff>:/imgs/imgs/search_white.png</normaloff>:/imgs/imgs/search_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -1297,7 +1319,7 @@ border: none;
                         </property>
                         <property name="icon">
                          <iconset resource="resources.qrc">
-                          <normaloff>:/imgs/imgs/add.png</normaloff>:/imgs/imgs/add.png</iconset>
+                          <normaloff>:/imgs/imgs/add_white.png</normaloff>:/imgs/imgs/add_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -1332,7 +1354,7 @@ border: none;
                         </property>
                         <property name="icon">
                          <iconset resource="resources.qrc">
-                          <normaloff>:/imgs/imgs/edit.png</normaloff>:/imgs/imgs/edit.png</iconset>
+                          <normaloff>:/imgs/imgs/edit_white.png</normaloff>:/imgs/imgs/edit_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -1361,7 +1383,7 @@ border: none;
                         </property>
                         <property name="icon">
                          <iconset resource="resources.qrc">
-                          <normaloff>:/imgs/imgs/delete.png</normaloff>:/imgs/imgs/delete.png</iconset>
+                          <normaloff>:/imgs/imgs/delete_white.png</normaloff>:/imgs/imgs/delete_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -1423,15 +1445,30 @@ border: none;
                     <property name="text">
                      <string>Program Code</string>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
+                    </property>
                    </column>
                    <column>
                     <property name="text">
                      <string>Program Name</string>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
+                    </property>
                    </column>
                    <column>
                     <property name="text">
                      <string>College Code</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
                     </property>
                    </column>
                   </widget>
@@ -1708,10 +1745,8 @@ border: none;
                          <string/>
                         </property>
                         <property name="icon">
-                         <iconset>
-                          <normaloff>:/icon/icon/search-13-48.ico</normaloff>
-                          <normalon>:/imgs/imgs/search.png</normalon>
-                          <disabledoff>:/imgs/imgs/search.png</disabledoff>:/icon/icon/search-13-48.ico</iconset>
+                         <iconset resource="resources.qrc">
+                          <normaloff>:/imgs/imgs/search_white.png</normaloff>:/imgs/imgs/search_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -1757,7 +1792,7 @@ border: none;
                         </property>
                         <property name="icon">
                          <iconset resource="resources.qrc">
-                          <normaloff>:/imgs/imgs/add.png</normaloff>:/imgs/imgs/add.png</iconset>
+                          <normaloff>:/imgs/imgs/add_white.png</normaloff>:/imgs/imgs/add_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -1792,7 +1827,7 @@ border: none;
                         </property>
                         <property name="icon">
                          <iconset resource="resources.qrc">
-                          <normaloff>:/imgs/imgs/edit.png</normaloff>:/imgs/imgs/edit.png</iconset>
+                          <normaloff>:/imgs/imgs/edit_white.png</normaloff>:/imgs/imgs/edit_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -1821,7 +1856,7 @@ border: none;
                         </property>
                         <property name="icon">
                          <iconset resource="resources.qrc">
-                          <normaloff>:/imgs/imgs/delete.png</normaloff>:/imgs/imgs/delete.png</iconset>
+                          <normaloff>:/imgs/imgs/delete_white.png</normaloff>:/imgs/imgs/delete_white.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
@@ -1883,10 +1918,20 @@ border: none;
                     <property name="text">
                      <string>College Code</string>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
+                    </property>
                    </column>
                    <column>
                     <property name="text">
                      <string>College Name</string>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Verdana</family>
+                     </font>
                     </property>
                    </column>
                   </widget>
