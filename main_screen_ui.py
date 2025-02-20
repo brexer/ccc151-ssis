@@ -226,47 +226,6 @@ class Ui_MainWindow(object):
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.widget = QWidget(self.widget_3)
-        self.widget.setObjectName(u"widget")
-        self.widget.setMinimumSize(QSize(0, 40))
-        self.widget.setStyleSheet(u"")
-        self.horizontalLayout_4 = QHBoxLayout(self.widget)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.menuButton = QPushButton(self.widget)
-        self.menuButton.setObjectName(u"menuButton")
-        sizePolicy.setHeightForWidth(self.menuButton.sizePolicy().hasHeightForWidth())
-        self.menuButton.setSizePolicy(sizePolicy)
-        self.menuButton.setMinimumSize(QSize(40, 40))
-        self.menuButton.setMaximumSize(QSize(40, 40))
-        icon4 = QIcon()
-        icon4.addFile(u":/imgs/imgs/menu_fixed.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.menuButton.setIcon(icon4)
-        self.menuButton.setIconSize(QSize(30, 40))
-        self.menuButton.setCheckable(True)
-
-        self.horizontalLayout_4.addWidget(self.menuButton)
-
-        self.horizontalSpacer = QSpacerItem(236, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_4.addItem(self.horizontalSpacer)
-
-        self.label_2 = QLabel(self.widget)
-        self.label_2.setObjectName(u"label_2")
-        font2 = QFont()
-        font2.setFamilies([u"Verdana"])
-        font2.setPointSize(12)
-        font2.setBold(True)
-        self.label_2.setFont(font2)
-
-        self.horizontalLayout_4.addWidget(self.label_2)
-
-        self.horizontalSpacer_2 = QSpacerItem(236, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
-
-
-        self.gridLayout.addWidget(self.widget, 0, 0, 1, 2)
-
         self.stackedWidget = QStackedWidget(self.widget_3)
         self.stackedWidget.setObjectName(u"stackedWidget")
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
@@ -325,9 +284,9 @@ class Ui_MainWindow(object):
         self.comboBox_29.setSizePolicy(sizePolicy)
         self.comboBox_29.setMinimumSize(QSize(85, 28))
         self.comboBox_29.setMaximumSize(QSize(85, 28))
-        font3 = QFont()
-        font3.setFamilies([u"Verdana"])
-        self.comboBox_29.setFont(font3)
+        font2 = QFont()
+        font2.setFamilies([u"Verdana"])
+        self.comboBox_29.setFont(font2)
 
         self.horizontalLayout_18.addWidget(self.comboBox_29)
 
@@ -352,9 +311,9 @@ class Ui_MainWindow(object):
         sizePolicy7.setVerticalStretch(0)
         sizePolicy7.setHeightForWidth(self.searchButton_16.sizePolicy().hasHeightForWidth())
         self.searchButton_16.setSizePolicy(sizePolicy7)
-        icon5 = QIcon()
-        icon5.addFile(u":/imgs/imgs/search_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.searchButton_16.setIcon(icon5)
+        icon4 = QIcon()
+        icon4.addFile(u":/imgs/imgs/search_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.searchButton_16.setIcon(icon4)
         self.searchButton_16.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_11.addWidget(self.searchButton_16)
@@ -375,13 +334,13 @@ class Ui_MainWindow(object):
         sizePolicy8.setVerticalStretch(0)
         sizePolicy8.setHeightForWidth(self.pushButton_52.sizePolicy().hasHeightForWidth())
         self.pushButton_52.setSizePolicy(sizePolicy8)
-        font4 = QFont()
-        font4.setFamilies([u"Verdana"])
-        font4.setPointSize(9)
-        self.pushButton_52.setFont(font4)
-        icon6 = QIcon()
-        icon6.addFile(u":/imgs/imgs/add_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_52.setIcon(icon6)
+        font3 = QFont()
+        font3.setFamilies([u"Verdana"])
+        font3.setPointSize(9)
+        self.pushButton_52.setFont(font3)
+        icon5 = QIcon()
+        icon5.addFile(u":/imgs/imgs/add_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_52.setIcon(icon5)
         self.pushButton_52.setIconSize(QSize(20, 20))
         self.pushButton_52.setCheckable(True)
         self.pushButton_52.setAutoExclusive(True)
@@ -392,10 +351,10 @@ class Ui_MainWindow(object):
         self.pushButton_43.setObjectName(u"pushButton_43")
         sizePolicy8.setHeightForWidth(self.pushButton_43.sizePolicy().hasHeightForWidth())
         self.pushButton_43.setSizePolicy(sizePolicy8)
-        self.pushButton_43.setFont(font4)
-        icon7 = QIcon()
-        icon7.addFile(u":/imgs/imgs/edit_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_43.setIcon(icon7)
+        self.pushButton_43.setFont(font3)
+        icon6 = QIcon()
+        icon6.addFile(u":/imgs/imgs/edit_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_43.setIcon(icon6)
         self.pushButton_43.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_38.addWidget(self.pushButton_43)
@@ -404,10 +363,10 @@ class Ui_MainWindow(object):
         self.pushButton_44.setObjectName(u"pushButton_44")
         sizePolicy8.setHeightForWidth(self.pushButton_44.sizePolicy().hasHeightForWidth())
         self.pushButton_44.setSizePolicy(sizePolicy8)
-        self.pushButton_44.setFont(font4)
-        icon8 = QIcon()
-        icon8.addFile(u":/imgs/imgs/delete_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_44.setIcon(icon8)
+        self.pushButton_44.setFont(font3)
+        icon7 = QIcon()
+        icon7.addFile(u":/imgs/imgs/delete_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton_44.setIcon(icon7)
         self.pushButton_44.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_38.addWidget(self.pushButton_44)
@@ -425,7 +384,7 @@ class Ui_MainWindow(object):
         self.comboBox_28.setObjectName(u"comboBox_28")
         sizePolicy8.setHeightForWidth(self.comboBox_28.sizePolicy().hasHeightForWidth())
         self.comboBox_28.setSizePolicy(sizePolicy8)
-        self.comboBox_28.setFont(font3)
+        self.comboBox_28.setFont(font2)
 
         self.horizontalLayout_39.addWidget(self.comboBox_28)
 
@@ -435,35 +394,35 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_17.addWidget(self.frame_5)
 
-        self.tableWidget_4 = QTableWidget(self.frame_7)
-        if (self.tableWidget_4.columnCount() < 6):
-            self.tableWidget_4.setColumnCount(6)
+        self.studentTable = QTableWidget(self.frame_7)
+        if (self.studentTable.columnCount() < 6):
+            self.studentTable.setColumnCount(6)
         __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setFont(font3);
-        self.tableWidget_4.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem.setFont(font2);
+        self.studentTable.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setFont(font3);
-        self.tableWidget_4.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem1.setFont(font2);
+        self.studentTable.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setFont(font3);
-        self.tableWidget_4.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem2.setFont(font2);
+        self.studentTable.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setFont(font3);
-        self.tableWidget_4.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem3.setFont(font2);
+        self.studentTable.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font3);
-        self.tableWidget_4.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem4.setFont(font2);
+        self.studentTable.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
-        __qtablewidgetitem5.setFont(font3);
-        self.tableWidget_4.setHorizontalHeaderItem(5, __qtablewidgetitem5)
-        self.tableWidget_4.setObjectName(u"tableWidget_4")
+        __qtablewidgetitem5.setFont(font2);
+        self.studentTable.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        self.studentTable.setObjectName(u"studentTable")
         sizePolicy9 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy9.setHorizontalStretch(0)
         sizePolicy9.setVerticalStretch(15)
-        sizePolicy9.setHeightForWidth(self.tableWidget_4.sizePolicy().hasHeightForWidth())
-        self.tableWidget_4.setSizePolicy(sizePolicy9)
+        sizePolicy9.setHeightForWidth(self.studentTable.sizePolicy().hasHeightForWidth())
+        self.studentTable.setSizePolicy(sizePolicy9)
 
-        self.verticalLayout_17.addWidget(self.tableWidget_4)
+        self.verticalLayout_17.addWidget(self.studentTable)
 
 
         self.horizontalLayout_10.addWidget(self.frame_7)
@@ -492,12 +451,20 @@ class Ui_MainWindow(object):
         self.frame_8.setFrameShape(QFrame.StyledPanel)
         self.frame_8.setFrameShadow(QFrame.Raised)
         self.comboBox_16 = QComboBox(self.frame_8)
+        self.comboBox_16.addItem("")
+        self.comboBox_16.addItem("")
         self.comboBox_16.setObjectName(u"comboBox_16")
         self.comboBox_16.setGeometry(QRect(110, 210, 91, 31))
         self.comboBox_17 = QComboBox(self.frame_8)
+        self.comboBox_17.addItem("")
+        self.comboBox_17.addItem("")
+        self.comboBox_17.addItem("")
+        self.comboBox_17.addItem("")
         self.comboBox_17.setObjectName(u"comboBox_17")
         self.comboBox_17.setGeometry(QRect(110, 170, 91, 31))
         self.comboBox_18 = QComboBox(self.frame_8)
+        self.comboBox_18.addItem("")
+        self.comboBox_18.addItem("")
         self.comboBox_18.setObjectName(u"comboBox_18")
         self.comboBox_18.setGeometry(QRect(110, 130, 91, 31))
         self.lineEdit_10 = QLineEdit(self.frame_8)
@@ -512,38 +479,38 @@ class Ui_MainWindow(object):
         self.label_20 = QLabel(self.frame_8)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setGeometry(QRect(10, 10, 71, 31))
-        font5 = QFont()
-        font5.setFamilies([u"Verdana"])
-        font5.setPointSize(10)
-        self.label_20.setFont(font5)
+        font4 = QFont()
+        font4.setFamilies([u"Verdana"])
+        font4.setPointSize(10)
+        self.label_20.setFont(font4)
         self.label_21 = QLabel(self.frame_8)
         self.label_21.setObjectName(u"label_21")
         self.label_21.setGeometry(QRect(10, 50, 71, 31))
-        self.label_21.setFont(font5)
+        self.label_21.setFont(font4)
         self.label_22 = QLabel(self.frame_8)
         self.label_22.setObjectName(u"label_22")
         self.label_22.setGeometry(QRect(10, 90, 71, 31))
-        self.label_22.setFont(font5)
+        self.label_22.setFont(font4)
         self.label_23 = QLabel(self.frame_8)
         self.label_23.setObjectName(u"label_23")
         self.label_23.setGeometry(QRect(10, 130, 71, 31))
-        self.label_23.setFont(font5)
+        self.label_23.setFont(font4)
         self.label_24 = QLabel(self.frame_8)
         self.label_24.setObjectName(u"label_24")
         self.label_24.setGeometry(QRect(10, 170, 71, 31))
-        self.label_24.setFont(font5)
+        self.label_24.setFont(font4)
         self.label_25 = QLabel(self.frame_8)
         self.label_25.setObjectName(u"label_25")
         self.label_25.setGeometry(QRect(10, 210, 71, 31))
-        self.label_25.setFont(font5)
+        self.label_25.setFont(font4)
         self.addStudentButton = QPushButton(self.frame_8)
         self.addStudentButton.setObjectName(u"addStudentButton")
         self.addStudentButton.setGeometry(QRect(160, 250, 111, 31))
-        font6 = QFont()
-        font6.setFamilies([u"Verdana"])
-        font6.setPointSize(10)
-        font6.setBold(True)
-        self.addStudentButton.setFont(font6)
+        font5 = QFont()
+        font5.setFamilies([u"Verdana"])
+        font5.setPointSize(10)
+        font5.setBold(True)
+        self.addStudentButton.setFont(font5)
 
         self.verticalLayout_18.addWidget(self.widget_2)
 
@@ -586,7 +553,7 @@ class Ui_MainWindow(object):
         self.comboBox_30.setSizePolicy(sizePolicy)
         self.comboBox_30.setMinimumSize(QSize(85, 28))
         self.comboBox_30.setMaximumSize(QSize(85, 28))
-        self.comboBox_30.setFont(font3)
+        self.comboBox_30.setFont(font2)
 
         self.horizontalLayout_19.addWidget(self.comboBox_30)
 
@@ -605,7 +572,7 @@ class Ui_MainWindow(object):
         self.searchButton_17.setObjectName(u"searchButton_17")
         sizePolicy7.setHeightForWidth(self.searchButton_17.sizePolicy().hasHeightForWidth())
         self.searchButton_17.setSizePolicy(sizePolicy7)
-        self.searchButton_17.setIcon(icon5)
+        self.searchButton_17.setIcon(icon4)
         self.searchButton_17.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_13.addWidget(self.searchButton_17)
@@ -623,8 +590,8 @@ class Ui_MainWindow(object):
         self.pushButton_51.setObjectName(u"pushButton_51")
         sizePolicy8.setHeightForWidth(self.pushButton_51.sizePolicy().hasHeightForWidth())
         self.pushButton_51.setSizePolicy(sizePolicy8)
-        self.pushButton_51.setFont(font4)
-        self.pushButton_51.setIcon(icon6)
+        self.pushButton_51.setFont(font3)
+        self.pushButton_51.setIcon(icon5)
         self.pushButton_51.setIconSize(QSize(20, 20))
         self.pushButton_51.setCheckable(True)
         self.pushButton_51.setAutoExclusive(True)
@@ -635,8 +602,8 @@ class Ui_MainWindow(object):
         self.pushButton_46.setObjectName(u"pushButton_46")
         sizePolicy8.setHeightForWidth(self.pushButton_46.sizePolicy().hasHeightForWidth())
         self.pushButton_46.setSizePolicy(sizePolicy8)
-        self.pushButton_46.setFont(font4)
-        self.pushButton_46.setIcon(icon7)
+        self.pushButton_46.setFont(font3)
+        self.pushButton_46.setIcon(icon6)
         self.pushButton_46.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_40.addWidget(self.pushButton_46)
@@ -645,8 +612,8 @@ class Ui_MainWindow(object):
         self.pushButton_47.setObjectName(u"pushButton_47")
         sizePolicy8.setHeightForWidth(self.pushButton_47.sizePolicy().hasHeightForWidth())
         self.pushButton_47.setSizePolicy(sizePolicy8)
-        self.pushButton_47.setFont(font4)
-        self.pushButton_47.setIcon(icon8)
+        self.pushButton_47.setFont(font3)
+        self.pushButton_47.setIcon(icon7)
         self.pushButton_47.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_40.addWidget(self.pushButton_47)
@@ -664,7 +631,7 @@ class Ui_MainWindow(object):
         self.comboBox_31.setObjectName(u"comboBox_31")
         sizePolicy8.setHeightForWidth(self.comboBox_31.sizePolicy().hasHeightForWidth())
         self.comboBox_31.setSizePolicy(sizePolicy8)
-        self.comboBox_31.setFont(font3)
+        self.comboBox_31.setFont(font2)
 
         self.horizontalLayout_41.addWidget(self.comboBox_31)
 
@@ -674,23 +641,23 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_19.addWidget(self.frame_6)
 
-        self.tableWidget_5 = QTableWidget(self.frame_10)
-        if (self.tableWidget_5.columnCount() < 3):
-            self.tableWidget_5.setColumnCount(3)
+        self.programTable = QTableWidget(self.frame_10)
+        if (self.programTable.columnCount() < 3):
+            self.programTable.setColumnCount(3)
         __qtablewidgetitem6 = QTableWidgetItem()
-        __qtablewidgetitem6.setFont(font3);
-        self.tableWidget_5.setHorizontalHeaderItem(0, __qtablewidgetitem6)
+        __qtablewidgetitem6.setFont(font2);
+        self.programTable.setHorizontalHeaderItem(0, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
-        __qtablewidgetitem7.setFont(font3);
-        self.tableWidget_5.setHorizontalHeaderItem(1, __qtablewidgetitem7)
+        __qtablewidgetitem7.setFont(font2);
+        self.programTable.setHorizontalHeaderItem(1, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
-        __qtablewidgetitem8.setFont(font3);
-        self.tableWidget_5.setHorizontalHeaderItem(2, __qtablewidgetitem8)
-        self.tableWidget_5.setObjectName(u"tableWidget_5")
-        sizePolicy9.setHeightForWidth(self.tableWidget_5.sizePolicy().hasHeightForWidth())
-        self.tableWidget_5.setSizePolicy(sizePolicy9)
+        __qtablewidgetitem8.setFont(font2);
+        self.programTable.setHorizontalHeaderItem(2, __qtablewidgetitem8)
+        self.programTable.setObjectName(u"programTable")
+        sizePolicy9.setHeightForWidth(self.programTable.sizePolicy().hasHeightForWidth())
+        self.programTable.setSizePolicy(sizePolicy9)
 
-        self.verticalLayout_19.addWidget(self.tableWidget_5)
+        self.verticalLayout_19.addWidget(self.programTable)
 
 
         self.horizontalLayout_12.addWidget(self.frame_10)
@@ -724,19 +691,19 @@ class Ui_MainWindow(object):
         self.label_27 = QLabel(self.frame_11)
         self.label_27.setObjectName(u"label_27")
         self.label_27.setGeometry(QRect(10, 10, 101, 31))
-        self.label_27.setFont(font5)
+        self.label_27.setFont(font4)
         self.label_28 = QLabel(self.frame_11)
         self.label_28.setObjectName(u"label_28")
         self.label_28.setGeometry(QRect(10, 50, 101, 31))
-        self.label_28.setFont(font5)
+        self.label_28.setFont(font4)
         self.label_35 = QLabel(self.frame_11)
         self.label_35.setObjectName(u"label_35")
         self.label_35.setGeometry(QRect(10, 90, 101, 31))
-        self.label_35.setFont(font5)
-        self.addStudentButton_2 = QPushButton(self.frame_11)
-        self.addStudentButton_2.setObjectName(u"addStudentButton_2")
-        self.addStudentButton_2.setGeometry(QRect(160, 130, 111, 31))
-        self.addStudentButton_2.setFont(font6)
+        self.label_35.setFont(font4)
+        self.addProgramButton = QPushButton(self.frame_11)
+        self.addProgramButton.setObjectName(u"addProgramButton")
+        self.addProgramButton.setGeometry(QRect(160, 130, 111, 31))
+        self.addProgramButton.setFont(font5)
 
         self.verticalLayout_20.addWidget(self.widget_4)
 
@@ -779,7 +746,7 @@ class Ui_MainWindow(object):
         self.comboBox_32.setSizePolicy(sizePolicy)
         self.comboBox_32.setMinimumSize(QSize(85, 28))
         self.comboBox_32.setMaximumSize(QSize(85, 28))
-        self.comboBox_32.setFont(font3)
+        self.comboBox_32.setFont(font2)
 
         self.horizontalLayout_20.addWidget(self.comboBox_32)
 
@@ -798,7 +765,7 @@ class Ui_MainWindow(object):
         self.searchButton_18.setObjectName(u"searchButton_18")
         sizePolicy7.setHeightForWidth(self.searchButton_18.sizePolicy().hasHeightForWidth())
         self.searchButton_18.setSizePolicy(sizePolicy7)
-        self.searchButton_18.setIcon(icon5)
+        self.searchButton_18.setIcon(icon4)
         self.searchButton_18.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_16.addWidget(self.searchButton_18)
@@ -816,8 +783,8 @@ class Ui_MainWindow(object):
         self.pushButton_53.setObjectName(u"pushButton_53")
         sizePolicy8.setHeightForWidth(self.pushButton_53.sizePolicy().hasHeightForWidth())
         self.pushButton_53.setSizePolicy(sizePolicy8)
-        self.pushButton_53.setFont(font4)
-        self.pushButton_53.setIcon(icon6)
+        self.pushButton_53.setFont(font3)
+        self.pushButton_53.setIcon(icon5)
         self.pushButton_53.setIconSize(QSize(20, 20))
         self.pushButton_53.setCheckable(True)
         self.pushButton_53.setAutoExclusive(True)
@@ -828,8 +795,8 @@ class Ui_MainWindow(object):
         self.pushButton_49.setObjectName(u"pushButton_49")
         sizePolicy8.setHeightForWidth(self.pushButton_49.sizePolicy().hasHeightForWidth())
         self.pushButton_49.setSizePolicy(sizePolicy8)
-        self.pushButton_49.setFont(font4)
-        self.pushButton_49.setIcon(icon7)
+        self.pushButton_49.setFont(font3)
+        self.pushButton_49.setIcon(icon6)
         self.pushButton_49.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_42.addWidget(self.pushButton_49)
@@ -838,8 +805,8 @@ class Ui_MainWindow(object):
         self.pushButton_50.setObjectName(u"pushButton_50")
         sizePolicy8.setHeightForWidth(self.pushButton_50.sizePolicy().hasHeightForWidth())
         self.pushButton_50.setSizePolicy(sizePolicy8)
-        self.pushButton_50.setFont(font4)
-        self.pushButton_50.setIcon(icon8)
+        self.pushButton_50.setFont(font3)
+        self.pushButton_50.setIcon(icon7)
         self.pushButton_50.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_42.addWidget(self.pushButton_50)
@@ -857,7 +824,7 @@ class Ui_MainWindow(object):
         self.comboBox_33.setObjectName(u"comboBox_33")
         sizePolicy8.setHeightForWidth(self.comboBox_33.sizePolicy().hasHeightForWidth())
         self.comboBox_33.setSizePolicy(sizePolicy8)
-        self.comboBox_33.setFont(font3)
+        self.comboBox_33.setFont(font2)
 
         self.horizontalLayout_43.addWidget(self.comboBox_33)
 
@@ -867,20 +834,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_21.addWidget(self.frame_12)
 
-        self.tableWidget_6 = QTableWidget(self.frame_9)
-        if (self.tableWidget_6.columnCount() < 2):
-            self.tableWidget_6.setColumnCount(2)
+        self.collegeTable = QTableWidget(self.frame_9)
+        if (self.collegeTable.columnCount() < 2):
+            self.collegeTable.setColumnCount(2)
         __qtablewidgetitem9 = QTableWidgetItem()
-        __qtablewidgetitem9.setFont(font3);
-        self.tableWidget_6.setHorizontalHeaderItem(0, __qtablewidgetitem9)
+        __qtablewidgetitem9.setFont(font2);
+        self.collegeTable.setHorizontalHeaderItem(0, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
-        __qtablewidgetitem10.setFont(font3);
-        self.tableWidget_6.setHorizontalHeaderItem(1, __qtablewidgetitem10)
-        self.tableWidget_6.setObjectName(u"tableWidget_6")
-        sizePolicy9.setHeightForWidth(self.tableWidget_6.sizePolicy().hasHeightForWidth())
-        self.tableWidget_6.setSizePolicy(sizePolicy9)
+        __qtablewidgetitem10.setFont(font2);
+        self.collegeTable.setHorizontalHeaderItem(1, __qtablewidgetitem10)
+        self.collegeTable.setObjectName(u"collegeTable")
+        sizePolicy9.setHeightForWidth(self.collegeTable.sizePolicy().hasHeightForWidth())
+        self.collegeTable.setSizePolicy(sizePolicy9)
 
-        self.verticalLayout_21.addWidget(self.tableWidget_6)
+        self.verticalLayout_21.addWidget(self.collegeTable)
 
 
         self.horizontalLayout_14.addWidget(self.frame_9)
@@ -911,15 +878,15 @@ class Ui_MainWindow(object):
         self.label_29 = QLabel(self.frame_13)
         self.label_29.setObjectName(u"label_29")
         self.label_29.setGeometry(QRect(10, 10, 101, 31))
-        self.label_29.setFont(font5)
+        self.label_29.setFont(font4)
         self.label_30 = QLabel(self.frame_13)
         self.label_30.setObjectName(u"label_30")
         self.label_30.setGeometry(QRect(10, 50, 101, 31))
-        self.label_30.setFont(font5)
-        self.addStudentButton_3 = QPushButton(self.frame_13)
-        self.addStudentButton_3.setObjectName(u"addStudentButton_3")
-        self.addStudentButton_3.setGeometry(QRect(160, 90, 111, 31))
-        self.addStudentButton_3.setFont(font6)
+        self.label_30.setFont(font4)
+        self.addCollegeButton = QPushButton(self.frame_13)
+        self.addCollegeButton.setObjectName(u"addCollegeButton")
+        self.addCollegeButton.setGeometry(QRect(160, 90, 111, 31))
+        self.addCollegeButton.setFont(font5)
 
         self.verticalLayout_22.addWidget(self.widget_6)
 
@@ -932,6 +899,47 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.collegePage)
 
         self.gridLayout.addWidget(self.stackedWidget, 1, 0, 1, 1)
+
+        self.widget = QWidget(self.widget_3)
+        self.widget.setObjectName(u"widget")
+        self.widget.setMinimumSize(QSize(0, 40))
+        self.widget.setStyleSheet(u"")
+        self.horizontalLayout_4 = QHBoxLayout(self.widget)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.menuButton = QPushButton(self.widget)
+        self.menuButton.setObjectName(u"menuButton")
+        sizePolicy.setHeightForWidth(self.menuButton.sizePolicy().hasHeightForWidth())
+        self.menuButton.setSizePolicy(sizePolicy)
+        self.menuButton.setMinimumSize(QSize(40, 40))
+        self.menuButton.setMaximumSize(QSize(40, 40))
+        icon8 = QIcon()
+        icon8.addFile(u":/imgs/imgs/menu_fixed.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.menuButton.setIcon(icon8)
+        self.menuButton.setIconSize(QSize(30, 40))
+        self.menuButton.setCheckable(True)
+
+        self.horizontalLayout_4.addWidget(self.menuButton)
+
+        self.horizontalSpacer = QSpacerItem(236, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer)
+
+        self.label_2 = QLabel(self.widget)
+        self.label_2.setObjectName(u"label_2")
+        font6 = QFont()
+        font6.setFamilies([u"Verdana"])
+        font6.setPointSize(12)
+        font6.setBold(True)
+        self.label_2.setFont(font6)
+
+        self.horizontalLayout_4.addWidget(self.label_2)
+
+        self.horizontalSpacer_2 = QSpacerItem(236, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
+
+
+        self.gridLayout.addWidget(self.widget, 0, 0, 1, 2)
 
 
         self.horizontalLayout_15.addWidget(self.widget_3)
@@ -953,7 +961,7 @@ class Ui_MainWindow(object):
         self.homeButton1.toggled.connect(self.homeButton2.setChecked)
         self.homeButton2.toggled.connect(self.homeButton1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -969,8 +977,6 @@ class Ui_MainWindow(object):
         self.studentButton2.setText(QCoreApplication.translate("MainWindow", u"Student", None))
         self.programButton2.setText(QCoreApplication.translate("MainWindow", u"Program", None))
         self.collegeButton2.setText(QCoreApplication.translate("MainWindow", u"College", None))
-        self.menuButton.setText("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Student Information System", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.comboBox_29.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search..", None))
         self.searchButton_16.setText("")
@@ -978,18 +984,29 @@ class Ui_MainWindow(object):
         self.pushButton_43.setText("")
         self.pushButton_44.setText("")
         self.comboBox_28.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Sort by", None))
-        ___qtablewidgetitem = self.tableWidget_4.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.studentTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"ID Number", None));
-        ___qtablewidgetitem1 = self.tableWidget_4.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.studentTable.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"First Name", None));
-        ___qtablewidgetitem2 = self.tableWidget_4.horizontalHeaderItem(2)
+        ___qtablewidgetitem2 = self.studentTable.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Last Name", None));
-        ___qtablewidgetitem3 = self.tableWidget_4.horizontalHeaderItem(3)
+        ___qtablewidgetitem3 = self.studentTable.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Gender", None));
-        ___qtablewidgetitem4 = self.tableWidget_4.horizontalHeaderItem(4)
+        ___qtablewidgetitem4 = self.studentTable.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Year Level", None));
-        ___qtablewidgetitem5 = self.tableWidget_4.horizontalHeaderItem(5)
+        ___qtablewidgetitem5 = self.studentTable.horizontalHeaderItem(5)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Program", None));
+        self.comboBox_16.setItemText(0, QCoreApplication.translate("MainWindow", u"BSCS", None))
+        self.comboBox_16.setItemText(1, QCoreApplication.translate("MainWindow", u"BSIT", None))
+
+        self.comboBox_17.setItemText(0, QCoreApplication.translate("MainWindow", u"First Year", None))
+        self.comboBox_17.setItemText(1, QCoreApplication.translate("MainWindow", u"Second Year", None))
+        self.comboBox_17.setItemText(2, QCoreApplication.translate("MainWindow", u"Third Year", None))
+        self.comboBox_17.setItemText(3, QCoreApplication.translate("MainWindow", u"Fourth Year", None))
+
+        self.comboBox_18.setItemText(0, QCoreApplication.translate("MainWindow", u"Male", None))
+        self.comboBox_18.setItemText(1, QCoreApplication.translate("MainWindow", u"Female", None))
+
         self.label_20.setText(QCoreApplication.translate("MainWindow", u"ID #", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"First Name", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Last Name", None))
@@ -1003,28 +1020,30 @@ class Ui_MainWindow(object):
         self.pushButton_46.setText("")
         self.pushButton_47.setText("")
         self.comboBox_31.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Sort by", None))
-        ___qtablewidgetitem6 = self.tableWidget_5.horizontalHeaderItem(0)
+        ___qtablewidgetitem6 = self.programTable.horizontalHeaderItem(0)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Program Code", None));
-        ___qtablewidgetitem7 = self.tableWidget_5.horizontalHeaderItem(1)
+        ___qtablewidgetitem7 = self.programTable.horizontalHeaderItem(1)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Program Name", None));
-        ___qtablewidgetitem8 = self.tableWidget_5.horizontalHeaderItem(2)
+        ___qtablewidgetitem8 = self.programTable.horizontalHeaderItem(2)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"College Code", None));
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"Program Code", None))
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"Program Name", None))
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"College Code", None))
-        self.addStudentButton_2.setText(QCoreApplication.translate("MainWindow", u"Add Program", None))
+        self.addProgramButton.setText(QCoreApplication.translate("MainWindow", u"Add Program", None))
         self.comboBox_32.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search..", None))
         self.searchButton_18.setText("")
         self.pushButton_53.setText("")
         self.pushButton_49.setText("")
         self.pushButton_50.setText("")
         self.comboBox_33.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Sort by", None))
-        ___qtablewidgetitem9 = self.tableWidget_6.horizontalHeaderItem(0)
+        ___qtablewidgetitem9 = self.collegeTable.horizontalHeaderItem(0)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"College Code", None));
-        ___qtablewidgetitem10 = self.tableWidget_6.horizontalHeaderItem(1)
+        ___qtablewidgetitem10 = self.collegeTable.horizontalHeaderItem(1)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"College Name", None));
         self.label_29.setText(QCoreApplication.translate("MainWindow", u"College Code", None))
         self.label_30.setText(QCoreApplication.translate("MainWindow", u"College Name", None))
-        self.addStudentButton_3.setText(QCoreApplication.translate("MainWindow", u"Add College", None))
+        self.addCollegeButton.setText(QCoreApplication.translate("MainWindow", u"Add College", None))
+        self.menuButton.setText("")
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Student Information System", None))
     # retranslateUi
 

@@ -460,99 +460,6 @@ QLabel {
        <property name="spacing">
         <number>0</number>
        </property>
-       <item row="0" column="0" colspan="2">
-        <widget class="QWidget" name="widget" native="true">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <item>
-           <widget class="QPushButton" name="menuButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>40</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>40</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/imgs/imgs/menu_fixed.png</normaloff>:/imgs/imgs/menu_fixed.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>30</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>236</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="font">
-             <font>
-              <family>Verdana</family>
-              <pointsize>12</pointsize>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Student Information System</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>236</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </widget>
-       </item>
        <item row="1" column="0">
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="sizePolicy">
@@ -562,7 +469,7 @@ QLabel {
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="mainPage">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -844,7 +751,7 @@ QLabel {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QTableWidget" name="tableWidget_4">
+                  <widget class="QTableWidget" name="studentTable">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -969,6 +876,16 @@ QLabel {
                        <height>31</height>
                       </rect>
                      </property>
+                     <item>
+                      <property name="text">
+                       <string>BSCS</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>BSIT</string>
+                      </property>
+                     </item>
                     </widget>
                     <widget class="QComboBox" name="comboBox_17">
                      <property name="geometry">
@@ -979,6 +896,26 @@ QLabel {
                        <height>31</height>
                       </rect>
                      </property>
+                     <item>
+                      <property name="text">
+                       <string>First Year</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Second Year</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Third Year</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Fourth Year</string>
+                      </property>
+                     </item>
                     </widget>
                     <widget class="QComboBox" name="comboBox_18">
                      <property name="geometry">
@@ -989,6 +926,16 @@ QLabel {
                        <height>31</height>
                       </rect>
                      </property>
+                     <item>
+                      <property name="text">
+                       <string>Male</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Female</string>
+                      </property>
+                     </item>
                     </widget>
                     <widget class="QLineEdit" name="lineEdit_10">
                      <property name="geometry">
@@ -1434,7 +1381,7 @@ QLabel {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QTableWidget" name="tableWidget_5">
+                  <widget class="QTableWidget" name="programTable">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -1607,7 +1554,7 @@ QLabel {
                       <string>College Code</string>
                      </property>
                     </widget>
-                    <widget class="QPushButton" name="addStudentButton_2">
+                    <widget class="QPushButton" name="addProgramButton">
                      <property name="geometry">
                       <rect>
                        <x>160</x>
@@ -1907,7 +1854,7 @@ QLabel {
                   </widget>
                  </item>
                  <item>
-                  <widget class="QTableWidget" name="tableWidget_6">
+                  <widget class="QTableWidget" name="collegeTable">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -2041,7 +1988,7 @@ QLabel {
                       <string>College Name</string>
                      </property>
                     </widget>
-                    <widget class="QPushButton" name="addStudentButton_3">
+                    <widget class="QPushButton" name="addCollegeButton">
                      <property name="geometry">
                       <rect>
                        <x>160</x>
@@ -2072,6 +2019,99 @@ QLabel {
            </item>
           </layout>
          </widget>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QWidget" name="widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QPushButton" name="menuButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/imgs/imgs/menu_fixed.png</normaloff>:/imgs/imgs/menu_fixed.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>236</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <family>Verdana</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Student Information System</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>236</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
