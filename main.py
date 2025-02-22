@@ -49,7 +49,7 @@ class MainWindow(QMainWindow):
 
         # initializing student data
         self.ui.student_id = self.ui.lineEdit_12
-        self.ui.student_id.setValidator(QIntValidator()) # only accepts integer
+        self.ui.student_id.setValidator(QIntValidator())  # only accepts integer
         self.ui.student_Fname = self.ui.lineEdit_11
         self.ui.student_Lname = self.ui.lineEdit_10
         self.ui.student_gender = self.ui.comboBox_18
@@ -65,25 +65,31 @@ class MainWindow(QMainWindow):
         self.ui.college_code = self.ui.lineEdit_16
         self.ui.college_name = self.ui.lineEdit_15
 
-        # connecting add buttons to functions
+        # connecting add buttons to add functions
         self.ui.addStudentButton.clicked.connect(self.addStudent)
         self.ui.addProgramButton.clicked.connect(self.addProgram)
         self.ui.addCollegeButton.clicked.connect(self.addCollege)
 
+        # connecting edit buttons to edit functions
         self.ui.pushButton_43.clicked.connect(self.editStudent)
         self.ui.pushButton_46.clicked.connect(self.editProgram)
         self.ui.pushButton_49.clicked.connect(self.editCollege)
 
+        # connecting delete buttons to delete functions
         self.ui.pushButton_44.clicked.connect(self.deleteStudent)
         self.ui.pushButton_47.clicked.connect(self.deleteProgram)
         self.ui.pushButton_50.clicked.connect(self.deleteCollege)
 
-
+        # Load initial data and update tables
+        self.loadStudentData()
+        self.updateStudentTable()
+        self.loadProgramData()
+        self.updateProgramTable()
+        self.loadCollegeData()
+        self.updateCollegeTable()
 
     def changePage(self, index):
         self.ui.stackedWidget.setCurrentIndex(index)
-
-# start of STUDENT PAGE
 
     def addStudent(self):
         student_id = self.ui.student_id.text().strip()
@@ -95,14 +101,14 @@ class MainWindow(QMainWindow):
 
         # check if all fields are filled out
         if not student_id or not student_Fname or not student_Lname or not student_gender or not student_yearlevel or not student_program:
-            QMessageBox.warning(self, "All fields are required.", "Please fill out all fields.")
+            QMessageBox.warning(self, "All fields are required", "Please fill out all fields.")
             return
-        else:
-            new_student = [student_id, student_Fname, student_Lname, student_gender, student_yearlevel, student_program]
-            self.students.append(new_student)
-            self.saveStudentData()
-            self.updateStudentTable()
-            QMessageBox.information(self, "Student Added", "Student has been added successfully.")
+
+        new_student = [student_id, student_Fname, student_Lname, student_gender, student_yearlevel, student_program]
+        self.students.append(new_student)
+        self.saveStudentData()
+        self.updateStudentTable()
+        QMessageBox.information(self, "Student Added", "Student has been added successfully.")
 
     def saveStudentData(self):
         with open(studentdb, 'w', newline='') as csvfile:
@@ -111,14 +117,14 @@ class MainWindow(QMainWindow):
             writer.writerows(self.students)
 
     def loadStudentData(self):
+        self.students = []
+        if not Path(studentdb).exists():
+            return
         with open(studentdb, newline='') as csvfile:
             reader = csv.DictReader(csvfile)
-            next(reader)
-            self.students = [[row["ID"], row["First Name"], row["Last Name"], row["Gender"], row["Year Level"], row["Program"]] for row in reader]
-            
-            return self.students
-            self.updateStudentTable()   
-        
+            for row in reader:
+                self.students.append([row["ID"], row["First Name"], row["Last Name"], row["Gender"], row["Year Level"], row["Program"]])
+
     def updateStudentTable(self):
         self.ui.studentTable.setRowCount(len(self.students))
         self.ui.studentTable.setColumnCount(6)
@@ -180,7 +186,7 @@ class MainWindow(QMainWindow):
         selectedRow = self.ui.studentTable.currentRow()
 
         if selectedRow == -1:
-            QMessageBox.warning(self, "No student selected.", "Please select a student to delete.")
+            QMessageBox.warning(self, "No student selected", "Please select a student to delete.")
             return
         
         studentSelected = self.ui.studentTable.item(selectedRow, 0).text()
@@ -190,15 +196,11 @@ class MainWindow(QMainWindow):
 
         if confirm == QMessageBox.StandardButton.Yes:
             self.ui.studentTable.removeRow(selectedRow)
+            self.students.pop(selectedRow)
+            self.saveStudentData()
             QMessageBox.information(self, "Student Deleted", "Student has been deleted successfully.")
 
-
-        
-        
-
-# end of STUDENT PAGE
-
-# start of PROGRAM PAGE
+    # start of PROGRAM PAGE
 
     def addProgram(self):
         program_code = self.ui.program_code.text().strip().upper()
@@ -207,16 +209,16 @@ class MainWindow(QMainWindow):
 
         # check if all fields are filled out
         if not program_code or not program_name or not program_college:
-            QMessageBox.warning(self, "All fields are required.", "Please fill out all fields.")
+            QMessageBox.warning(self, "All fields are required", "Please fill out all fields.")
             return
-        else:
-            new_program = [program_code, program_name, program_college]
-            self.programs.append(new_program)
-            self.saveProgramData()
-            self.updateProgramTable()
 
-            self.ui.comboBox_16.addItem(program_code)
-            QMessageBox.information(self, "Program Added", "Program has been added successfully.")
+        new_program = [program_code, program_name, program_college]
+        self.programs.append(new_program)
+        self.saveProgramData()
+        self.updateProgramTable()
+
+        self.ui.comboBox_16.addItem(program_code)
+        QMessageBox.information(self, "Program Added", "Program has been added successfully.")
 
     def saveProgramData(self):
         with open(programdb, 'w', newline='') as csvfile:
@@ -225,13 +227,13 @@ class MainWindow(QMainWindow):
             writer.writerows(self.programs)
 
     def loadProgramData(self):
+        self.programs = []
+        if not Path(programdb).exists():
+            return
         with open(programdb, newline='') as csvfile:
             reader = csv.DictReader(csvfile)
-            next(reader)
-            self.programs = [[row["Code"], row["Name"], row["College"]] for row in reader]
-
-            return self.programs
-            self.updateProgramTable()
+            for row in reader:
+                self.programs.append([row["Code"], row["Name"], row["College"]])
 
     def updateProgramTable(self):
         self.ui.programTable.setRowCount(len(self.programs))
@@ -265,9 +267,9 @@ class MainWindow(QMainWindow):
         QMessageBox.information(self, "Program Updated", "Program has been updated successfully.")
 
     def updateCurrentProgram(self, selectedRow):
-        program_code = self.editProgramDialog_ui.dialog_lineEdit_6.text().strip()
-        program_name = self.editProgramDialog_ui.dialog_lineEdit_7.text().strip().title()
-        program_college = self.editProgramDialog_ui.dialog_comboBox_4.currentText().upper()
+        program_code = self.editProgramDialog_ui.dialog_lineEdit_1.text().strip()
+        program_name = self.editProgramDialog_ui.dialog_lineEdit_2.text().strip().title()
+        program_college = self.editProgramDialog_ui.dialog_comboBox_1.currentText().upper()
 
         self.ui.programTable.setItem(selectedRow, 0, QTableWidgetItem(program_code))
         self.ui.programTable.setItem(selectedRow, 1, QTableWidgetItem(program_name))
@@ -287,17 +289,16 @@ class MainWindow(QMainWindow):
         
         programSelected = self.ui.programTable.item(selectedRow, 0).text()
 
-        confirm = QMessageBox.question(self, "Delete Program", f"Are you sure you want to delete program {program}?",
+        confirm = QMessageBox.question(self, "Delete Program", f"Are you sure you want to delete program {programSelected}?",
         QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,)
 
         if confirm == QMessageBox.StandardButton.Yes:
             self.ui.programTable.removeRow(selectedRow)
+            self.programs.pop(selectedRow)
+            self.saveProgramData()
             QMessageBox.information(self, "Program Deleted", "Program has been deleted successfully.")
 
-
-# end of PROGRAM PAGE
-
-# start of COLLEGE PAGE
+    # start of COLLEGE PAGE
 
     def addCollege(self):
         college_code = self.ui.college_code.text().strip().upper()
@@ -307,15 +308,15 @@ class MainWindow(QMainWindow):
         if not college_code or not college_name:
             QMessageBox.warning(self, "All fields are required.", "Please fill out all fields.")
             return
-        else:
-            new_college = [college_code, college_name]
-            self.colleges.append(new_college)
-            self.saveCollegeData()
-            self.updateCollegeTable()
-            
-            self.ui.comboBox_26.addItem(college_code)
-            
-            QMessageBox.information(self, "College Added", "College has been added successfully.")
+
+        new_college = [college_code, college_name]
+        self.colleges.append(new_college)
+        self.saveCollegeData()
+        self.updateCollegeTable()
+        
+        self.ui.comboBox_26.addItem(college_code)
+        
+        QMessageBox.information(self, "College Added", "College has been added successfully.")
 
     def saveCollegeData(self):
         with open(collegedb, 'w', newline='') as csvfile:
@@ -324,13 +325,13 @@ class MainWindow(QMainWindow):
             writer.writerows(self.colleges)
 
     def loadCollegeData(self):
+        self.colleges = []
+        if not Path(collegedb).exists():
+            return
         with open(collegedb, newline='') as csvfile:
             reader = csv.DictReader(csvfile)
-            next(reader)
-            self.colleges = [[row["Code"], row["Name"]] for row in reader]
-
-            return self.colleges
-            self.updateCollegeTable()
+            for row in reader:
+                self.colleges.append([row["Code"], row["Name"]])
 
     def updateCollegeTable(self):
         self.ui.collegeTable.setRowCount(len(self.colleges))
@@ -387,15 +388,12 @@ class MainWindow(QMainWindow):
 
         if confirm == QMessageBox.StandardButton.Yes:
             self.ui.collegeTable.removeRow(selectedRow)
+            self.colleges.pop(selectedRow)
+            self.saveCollegeData()
             QMessageBox.information(self, "College Deleted", "College has been deleted successfully.")
-
-# end of COLLEGE PAGE
-
-
 
     def clearForm(self):
         pass
-            
 
     def setStylesheetfile(self):
         stylesheet_path = Path(__file__).parent / "navbar.qss"
@@ -403,7 +401,6 @@ class MainWindow(QMainWindow):
             with open(stylesheet_path, "r") as file:
                 stylesheet = file.read()
                 self.setStyleSheet(stylesheet)
-
 
 if __name__ == '__main__':
     mainPage = QApplication(sys.argv)
