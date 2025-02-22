@@ -279,6 +279,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_18 = QHBoxLayout(self.frame_5)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.comboBox_29 = QComboBox(self.frame_5)
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
+        self.comboBox_29.addItem("")
         self.comboBox_29.setObjectName(u"comboBox_29")
         sizePolicy.setHeightForWidth(self.comboBox_29.sizePolicy().hasHeightForWidth())
         self.comboBox_29.setSizePolicy(sizePolicy)
@@ -304,19 +310,19 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11.addWidget(self.lineEdit_19)
 
-        self.searchButton_16 = QPushButton(self.frame_5)
-        self.searchButton_16.setObjectName(u"searchButton_16")
+        self.searchButton_1 = QPushButton(self.frame_5)
+        self.searchButton_1.setObjectName(u"searchButton_1")
         sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
         sizePolicy7.setHorizontalStretch(0)
         sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.searchButton_16.sizePolicy().hasHeightForWidth())
-        self.searchButton_16.setSizePolicy(sizePolicy7)
+        sizePolicy7.setHeightForWidth(self.searchButton_1.sizePolicy().hasHeightForWidth())
+        self.searchButton_1.setSizePolicy(sizePolicy7)
         icon4 = QIcon()
         icon4.addFile(u":/imgs/imgs/search_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.searchButton_16.setIcon(icon4)
-        self.searchButton_16.setIconSize(QSize(20, 20))
+        self.searchButton_1.setIcon(icon4)
+        self.searchButton_1.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_11.addWidget(self.searchButton_16)
+        self.horizontalLayout_11.addWidget(self.searchButton_1)
 
 
         self.horizontalLayout_18.addLayout(self.horizontalLayout_11)
@@ -547,6 +553,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19 = QHBoxLayout(self.frame_6)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.comboBox_30 = QComboBox(self.frame_6)
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
+        self.comboBox_30.addItem("")
         self.comboBox_30.setObjectName(u"comboBox_30")
         sizePolicy.setHeightForWidth(self.comboBox_30.sizePolicy().hasHeightForWidth())
         self.comboBox_30.setSizePolicy(sizePolicy)
@@ -567,14 +576,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.lineEdit_20)
 
-        self.searchButton_17 = QPushButton(self.frame_6)
-        self.searchButton_17.setObjectName(u"searchButton_17")
-        sizePolicy7.setHeightForWidth(self.searchButton_17.sizePolicy().hasHeightForWidth())
-        self.searchButton_17.setSizePolicy(sizePolicy7)
-        self.searchButton_17.setIcon(icon4)
-        self.searchButton_17.setIconSize(QSize(20, 20))
+        self.searchButton_2 = QPushButton(self.frame_6)
+        self.searchButton_2.setObjectName(u"searchButton_2")
+        sizePolicy7.setHeightForWidth(self.searchButton_2.sizePolicy().hasHeightForWidth())
+        self.searchButton_2.setSizePolicy(sizePolicy7)
+        self.searchButton_2.setIcon(icon4)
+        self.searchButton_2.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_13.addWidget(self.searchButton_17)
+        self.horizontalLayout_13.addWidget(self.searchButton_2)
 
 
         self.horizontalLayout_19.addLayout(self.horizontalLayout_13)
@@ -740,6 +749,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_20 = QHBoxLayout(self.frame_12)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
         self.comboBox_32 = QComboBox(self.frame_12)
+        self.comboBox_32.addItem("")
+        self.comboBox_32.addItem("")
         self.comboBox_32.setObjectName(u"comboBox_32")
         sizePolicy.setHeightForWidth(self.comboBox_32.sizePolicy().hasHeightForWidth())
         self.comboBox_32.setSizePolicy(sizePolicy)
@@ -760,14 +771,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_16.addWidget(self.lineEdit_22)
 
-        self.searchButton_18 = QPushButton(self.frame_12)
-        self.searchButton_18.setObjectName(u"searchButton_18")
-        sizePolicy7.setHeightForWidth(self.searchButton_18.sizePolicy().hasHeightForWidth())
-        self.searchButton_18.setSizePolicy(sizePolicy7)
-        self.searchButton_18.setIcon(icon4)
-        self.searchButton_18.setIconSize(QSize(20, 20))
+        self.searchButton_3 = QPushButton(self.frame_12)
+        self.searchButton_3.setObjectName(u"searchButton_3")
+        sizePolicy7.setHeightForWidth(self.searchButton_3.sizePolicy().hasHeightForWidth())
+        self.searchButton_3.setSizePolicy(sizePolicy7)
+        self.searchButton_3.setIcon(icon4)
+        self.searchButton_3.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_16.addWidget(self.searchButton_18)
+        self.horizontalLayout_16.addWidget(self.searchButton_3)
 
 
         self.horizontalLayout_20.addLayout(self.horizontalLayout_16)
@@ -960,7 +971,7 @@ class Ui_MainWindow(object):
         self.homeButton1.toggled.connect(self.homeButton2.setChecked)
         self.homeButton2.toggled.connect(self.homeButton1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -977,8 +988,15 @@ class Ui_MainWindow(object):
         self.programButton2.setText(QCoreApplication.translate("MainWindow", u"Program", None))
         self.collegeButton2.setText(QCoreApplication.translate("MainWindow", u"College", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
+        self.comboBox_29.setItemText(0, QCoreApplication.translate("MainWindow", u"ID Number", None))
+        self.comboBox_29.setItemText(1, QCoreApplication.translate("MainWindow", u"First Name", None))
+        self.comboBox_29.setItemText(2, QCoreApplication.translate("MainWindow", u"Last Name", None))
+        self.comboBox_29.setItemText(3, QCoreApplication.translate("MainWindow", u"Gender", None))
+        self.comboBox_29.setItemText(4, QCoreApplication.translate("MainWindow", u"Year Level", None))
+        self.comboBox_29.setItemText(5, QCoreApplication.translate("MainWindow", u"Program", None))
+
         self.comboBox_29.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search..", None))
-        self.searchButton_16.setText("")
+        self.searchButton_1.setText("")
         self.pushButton_52.setText("")
         self.pushButton_43.setText("")
         self.pushButton_44.setText("")
@@ -1012,8 +1030,12 @@ class Ui_MainWindow(object):
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Year Level", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Program", None))
         self.addStudentButton.setText(QCoreApplication.translate("MainWindow", u"Add Student", None))
+        self.comboBox_30.setItemText(0, QCoreApplication.translate("MainWindow", u"Program Code", None))
+        self.comboBox_30.setItemText(1, QCoreApplication.translate("MainWindow", u"Program Name", None))
+        self.comboBox_30.setItemText(2, QCoreApplication.translate("MainWindow", u"College Code", None))
+
         self.comboBox_30.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search..", None))
-        self.searchButton_17.setText("")
+        self.searchButton_2.setText("")
         self.pushButton_51.setText("")
         self.pushButton_46.setText("")
         self.pushButton_47.setText("")
@@ -1028,8 +1050,11 @@ class Ui_MainWindow(object):
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"Program Name", None))
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"College Code", None))
         self.addProgramButton.setText(QCoreApplication.translate("MainWindow", u"Add Program", None))
+        self.comboBox_32.setItemText(0, QCoreApplication.translate("MainWindow", u"College Code", None))
+        self.comboBox_32.setItemText(1, QCoreApplication.translate("MainWindow", u"College Name", None))
+
         self.comboBox_32.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search..", None))
-        self.searchButton_18.setText("")
+        self.searchButton_3.setText("")
         self.pushButton_53.setText("")
         self.pushButton_49.setText("")
         self.pushButton_50.setText("")

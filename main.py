@@ -80,6 +80,11 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_47.clicked.connect(self.deleteProgram)
         self.ui.pushButton_50.clicked.connect(self.deleteCollege)
 
+        # connecting search buttons to search functions
+        self.ui.searchButton_1.clicked.connect(self.searchStudent)
+        self.ui.searchButton_2.clicked.connect(self.searchProgram)
+        self.ui.searchButton_3.clicked.connect(self.searchCollege)
+
         # Load initial data and update tables
         self.loadStudentData()
         self.updateStudentTable()
@@ -212,6 +217,35 @@ class MainWindow(QMainWindow):
             self.saveStudentData()
             QMessageBox.information(self, "Student Deleted", "Student has been deleted successfully.")
 
+    def searchStudent(self):
+        search_text = self.ui.lineEdit_19.text().strip().lower()
+        search_by = self.ui.comboBox_29.currentText()
+
+        # mapping for the columns
+        self.search_by_options = { 
+            "ID Number": 0,
+            "First Name": 1,
+            "Last Name": 2,
+            "Gender": 3,
+            "Year Level": 4,
+            "Program": 5
+        }
+
+        columnSelected = self.search_by_options.get(search_by, -1)
+
+        # If no valid column is selected, show an error and return
+        if columnSelected == -1:
+            QMessageBox.warning(self, "Invalid Search Criteria", "Please select a valid search criteria.")
+            return
+
+        # Iterate through all rows in the studentTable
+        for row in range(self.ui.studentTable.rowCount()):
+            item = self.ui.studentTable.item(row, columnSelected)  
+            if item and search_text in item.text().lower():
+                self.ui.studentTable.setRowHidden(row, False)  
+            else:
+                self.ui.studentTable.setRowHidden(row, True) 
+
     # start of PROGRAM PAGE
 
     def addProgram(self):
@@ -313,6 +347,34 @@ class MainWindow(QMainWindow):
             self.saveProgramData()
             QMessageBox.information(self, "Program Deleted", "Program has been deleted successfully.")
 
+    def searchProgram(self):
+        search_text = self.ui.lineEdit_20.text().strip().lower()
+        search_by = self.ui.comboBox_30.currentText()
+
+        # mapping for the columns
+        self.search_by_options = { 
+            "Program Code": 0,
+            "Program Name": 1,
+            "College Code": 2,
+        }
+
+        columnSelected = self.search_by_options.get(search_by, -1)
+
+        # If no valid column is selected, show an error and return
+        if columnSelected == -1:
+            QMessageBox.warning(self, "Invalid Search Criteria", "Please select a valid search criteria.")
+            return
+
+        # Iterate through all rows in the programTable
+        for row in range(self.ui.programTable.rowCount()):
+            item = self.ui.programTable.item(row, columnSelected)  
+            if item and search_text in item.text().lower():
+                self.ui.programTable.setRowHidden(row, False)  
+            else:
+                self.ui.programTable.setRowHidden(row, True)
+
+    # end of PROGRAM PAGE
+
     # start of COLLEGE PAGE
 
     def addCollege(self):
@@ -408,6 +470,31 @@ class MainWindow(QMainWindow):
             self.colleges.pop(selectedRow)
             self.saveCollegeData()
             QMessageBox.information(self, "College Deleted", "College has been deleted successfully.")
+
+    def searchCollege(self):
+        search_text = self.ui.lineEdit_22.text().strip().lower()
+        search_by = self.ui.comboBox_32.currentText()
+
+        # mapping for the columns
+        self.search_by_options = { 
+            "College Code": 0,
+            "College Name": 1,
+        }
+
+        columnSelected = self.search_by_options.get(search_by, -1)
+
+        # If no valid column is selected, show an error and return
+        if columnSelected == -1:
+            QMessageBox.warning(self, "Invalid Search Criteria", "Please select a valid search criteria.")
+            return
+
+        # Iterate through all rows in the collegeTable
+        for row in range(self.ui.collegeTable.rowCount()):
+            item = self.ui.collegeTable.item(row, columnSelected)  
+            if item and search_text in item.text().lower():
+                self.ui.collegeTable.setRowHidden(row, False)  
+            else:
+                self.ui.collegeTable.setRowHidden(row, True)
 
     # end of College Page
 
