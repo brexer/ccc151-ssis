@@ -4,7 +4,7 @@ from edit_program_dialog import Ui_editProgramDialog
 from edit_college_dialog import Ui_editCollegeDialog
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedWidget, QTableWidget, QHeaderView, QTableWidgetItem, QMessageBox, QDialog
 from PyQt6.QtCore import QRegularExpression
-from PyQt6.QtGui import QIntValidator, QRegularExpressionValidator
+from PyQt6.QtGui import  QRegularExpressionValidator
 from pathlib import Path
 import resources
 import sys
@@ -88,11 +88,16 @@ class MainWindow(QMainWindow):
         self.loadCollegeData()
         self.updateCollegeTable()
 
+        # sorting
+        self.ui.studentTable.setSortingEnabled(True)
+        self.ui.programTable.setSortingEnabled(True)
+        self.ui.collegeTable.setSortingEnabled(True)
+
         # validator
         student_id_regex = QRegularExpression(r"^\d{4}-\d{4}$")
-        student_id_validator = QRegularExpressionValidator(student_id_regex, self)
+        student_id_validator = QRegularExpressionValidator(student_id_regex, self.ui.student_id)
+        self.ui.lineEdit_12.setValidator(student_id_validator)
 
-        self.ui.student_id.setValidator(student_id_validator)
 
     def changePage(self, index):
         self.ui.stackedWidget.setCurrentIndex(index)
@@ -137,6 +142,7 @@ class MainWindow(QMainWindow):
         for row, student in enumerate(self.students):
             for col, data in enumerate(student):
                 self.ui.studentTable.setItem(row, col, QTableWidgetItem(data))
+        self.ui.studentTable.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.ResizeToContents)
 
     def editStudent(self):
         selectedRow = self.ui.studentTable.currentRow()
@@ -223,7 +229,8 @@ class MainWindow(QMainWindow):
         self.saveProgramData()
         self.updateProgramTable()
 
-        self.ui.comboBox_16.addItem(program_code) # adds program to combobox in add student form
+        if self.ui.comboBox_16.findText(program_code) == -1:
+            self.ui.comboBox_16.addItem(program_code) # adds program to combobox in add student form
 
         QMessageBox.information(self, "Program Added", "Program has been added successfully.")
 
@@ -241,7 +248,7 @@ class MainWindow(QMainWindow):
             reader = csv.DictReader(csvfile)
             for row in reader:
                 self.programs.append([row["Code"], row["Name"], row["College"]])
-                self.ui.comboBox_26.addItem(row["Code"]) # adds existing program to add student combobox
+                self.ui.comboBox_16.addItem(row["Code"]) # adds existing program to add student combobox
 
     def updateProgramTable(self):
         self.ui.programTable.setRowCount(len(self.programs))
@@ -322,7 +329,8 @@ class MainWindow(QMainWindow):
         self.saveCollegeData()
         self.updateCollegeTable()
         
-        self.ui.comboBox_26.addItem(college_code) # adds college to combobox in add program form
+        if self.ui.comboBox_26.findText(college_code) == -1:
+            self.ui.comboBox_26.addItem(college_code) # adds college to combobox in add program form
         
         QMessageBox.information(self, "College Added", "College has been added successfully.")
 
@@ -340,7 +348,7 @@ class MainWindow(QMainWindow):
             reader = csv.DictReader(csvfile)
             for row in reader:
                 self.colleges.append([row["Code"], row["Name"]])
-                self.ui.comboBox_16.addItem(row["Code"]) # adds existing college to add program combobox
+                self.ui.comboBox_26.addItem(row["Code"]) # adds existing college to add program combobox
 
     def updateCollegeTable(self):
         self.ui.collegeTable.setRowCount(len(self.colleges))

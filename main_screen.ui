@@ -469,7 +469,7 @@ QLabel {
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="mainPage">
           <layout class="QGridLayout" name="gridLayout_2">
@@ -960,6 +960,9 @@ QLabel {
                        <width>161</width>
                        <height>31</height>
                       </rect>
+                     </property>
+                     <property name="placeholderText">
+                      <string>ex. 2025-0001</string>
                      </property>
                     </widget>
                     <widget class="QLabel" name="label_20">

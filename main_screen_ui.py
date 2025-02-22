@@ -960,7 +960,7 @@ class Ui_MainWindow(object):
         self.homeButton1.toggled.connect(self.homeButton2.setChecked)
         self.homeButton2.toggled.connect(self.homeButton1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1004,6 +1004,7 @@ class Ui_MainWindow(object):
         self.comboBox_18.setItemText(1, QCoreApplication.translate("MainWindow", u"Female", None))
         self.comboBox_18.setItemText(2, QCoreApplication.translate("MainWindow", u"Other", None))
 
+        self.lineEdit_12.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ex. 2025-0001", None))
         self.label_20.setText(QCoreApplication.translate("MainWindow", u"ID #", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"First Name", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Last Name", None))

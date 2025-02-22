@@ -980,7 +980,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         self.menuButton.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.menuButton.toggled['bool'].connect(self.full_menu_widget.setHidden) # type: ignore
         self.studentButton1.toggled['bool'].connect(self.studentButton2.setChecked) # type: ignore
@@ -1024,6 +1024,7 @@ class Ui_MainWindow(object):
         self.comboBox_18.setItemText(0, _translate("MainWindow", "Male"))
         self.comboBox_18.setItemText(1, _translate("MainWindow", "Female"))
         self.comboBox_18.setItemText(2, _translate("MainWindow", "Other"))
+        self.lineEdit_12.setPlaceholderText(_translate("MainWindow", "ex. 2025-0001"))
         self.label_20.setText(_translate("MainWindow", "ID #"))
         self.label_21.setText(_translate("MainWindow", "First Name"))
         self.label_22.setText(_translate("MainWindow", "Last Name"))
