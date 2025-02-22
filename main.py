@@ -177,7 +177,7 @@ class MainWindow(QMainWindow):
 # start of PROGRAM PAGE
 
     def addProgram(self):
-        program_code = self.ui.program_code.text().strip()
+        program_code = self.ui.program_code.text().strip().upper()
         program_name = self.ui.program_name.text().strip().title()
         program_college = self.ui.program_college.currentText().upper()
 
@@ -190,6 +190,8 @@ class MainWindow(QMainWindow):
             self.programs.append(new_program)
             self.saveProgramData()
             self.updateProgramTable()
+
+            self.ui.comboBox_16.addItem(program_code)
             QMessageBox.information(self, "Program Added", "Program has been added successfully.")
 
     def saveProgramData(self):
@@ -270,6 +272,9 @@ class MainWindow(QMainWindow):
             self.colleges.append(new_college)
             self.saveCollegeData()
             self.updateCollegeTable()
+            
+            self.ui.comboBox_26.addItem(college_code)
+            
             QMessageBox.information(self, "College Added", "College has been added successfully.")
 
     def saveCollegeData(self):

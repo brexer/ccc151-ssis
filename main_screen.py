@@ -415,8 +415,6 @@ class Ui_MainWindow(object):
         self.comboBox_16 = QtWidgets.QComboBox(parent=self.frame_8)
         self.comboBox_16.setGeometry(QtCore.QRect(110, 210, 91, 31))
         self.comboBox_16.setObjectName("comboBox_16")
-        self.comboBox_16.addItem("")
-        self.comboBox_16.addItem("")
         self.comboBox_17 = QtWidgets.QComboBox(parent=self.frame_8)
         self.comboBox_17.setGeometry(QtCore.QRect(110, 170, 91, 31))
         self.comboBox_17.setObjectName("comboBox_17")
@@ -427,6 +425,7 @@ class Ui_MainWindow(object):
         self.comboBox_18 = QtWidgets.QComboBox(parent=self.frame_8)
         self.comboBox_18.setGeometry(QtCore.QRect(110, 130, 91, 31))
         self.comboBox_18.setObjectName("comboBox_18")
+        self.comboBox_18.addItem("")
         self.comboBox_18.addItem("")
         self.comboBox_18.addItem("")
         self.lineEdit_10 = QtWidgets.QLineEdit(parent=self.frame_8)
@@ -981,7 +980,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
         self.menuButton.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         self.menuButton.toggled['bool'].connect(self.full_menu_widget.setHidden) # type: ignore
         self.studentButton1.toggled['bool'].connect(self.studentButton2.setChecked) # type: ignore
@@ -1018,14 +1017,13 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Year Level"))
         item = self.studentTable.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Program"))
-        self.comboBox_16.setItemText(0, _translate("MainWindow", "BSCS"))
-        self.comboBox_16.setItemText(1, _translate("MainWindow", "BSIT"))
         self.comboBox_17.setItemText(0, _translate("MainWindow", "First Year"))
         self.comboBox_17.setItemText(1, _translate("MainWindow", "Second Year"))
         self.comboBox_17.setItemText(2, _translate("MainWindow", "Third Year"))
         self.comboBox_17.setItemText(3, _translate("MainWindow", "Fourth Year"))
         self.comboBox_18.setItemText(0, _translate("MainWindow", "Male"))
         self.comboBox_18.setItemText(1, _translate("MainWindow", "Female"))
+        self.comboBox_18.setItemText(2, _translate("MainWindow", "Other"))
         self.label_20.setText(_translate("MainWindow", "ID #"))
         self.label_21.setText(_translate("MainWindow", "First Name"))
         self.label_22.setText(_translate("MainWindow", "Last Name"))
