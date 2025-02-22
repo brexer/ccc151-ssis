@@ -392,6 +392,8 @@ class MainWindow(QMainWindow):
             self.saveCollegeData()
             QMessageBox.information(self, "College Deleted", "College has been deleted successfully.")
 
+    # end of College Page
+
     def clearForm(self):
         pass
 
