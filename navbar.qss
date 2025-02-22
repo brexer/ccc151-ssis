@@ -62,7 +62,7 @@ QTableWidget {
 QHeaderView::section {
     background-color: #676F9D; 
     color: #FFFFFF;
-    padding: 5px;
+    padding: 2px;
     border: 1px solid #424769;
     font-weight: bold;
 }

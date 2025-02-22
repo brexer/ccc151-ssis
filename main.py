@@ -74,6 +74,10 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_46.clicked.connect(self.editProgram)
         self.ui.pushButton_49.clicked.connect(self.editCollege)
 
+        self.ui.pushButton_44.clicked.connect(self.deleteStudent)
+        self.ui.pushButton_47.clicked.connect(self.deleteProgram)
+        self.ui.pushButton_50.clicked.connect(self.deleteCollege)
+
 
 
     def changePage(self, index):
@@ -172,6 +176,26 @@ class MainWindow(QMainWindow):
 
         self.editStudentDialog.close()
 
+    def deleteStudent(self):
+        selectedRow = self.ui.studentTable.currentRow()
+
+        if selectedRow == -1:
+            QMessageBox.warning(self, "No student selected.", "Please select a student to delete.")
+            return
+        
+        studentSelected = self.ui.studentTable.item(selectedRow, 0).text()
+
+        confirm = QMessageBox.question(self, "Delete Student", f"Are you sure you want to delete student {studentSelected}?",
+        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,)
+
+        if confirm == QMessageBox.StandardButton.Yes:
+            self.ui.studentTable.removeRow(selectedRow)
+            QMessageBox.information(self, "Student Deleted", "Student has been deleted successfully.")
+
+
+        
+        
+
 # end of STUDENT PAGE
 
 # start of PROGRAM PAGE
@@ -254,6 +278,22 @@ class MainWindow(QMainWindow):
 
         self.editProgramDialog.close()
 
+    def deleteProgram(self):
+        selectedRow = self.ui.programTable.currentRow()
+
+        if selectedRow == -1:
+            QMessageBox.warning(self, "No program selected.", "Please select a program to delete.")
+            return
+        
+        programSelected = self.ui.programTable.item(selectedRow, 0).text()
+
+        confirm = QMessageBox.question(self, "Delete Program", f"Are you sure you want to delete program {program}?",
+        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,)
+
+        if confirm == QMessageBox.StandardButton.Yes:
+            self.ui.programTable.removeRow(selectedRow)
+            QMessageBox.information(self, "Program Deleted", "Program has been deleted successfully.")
+
 
 # end of PROGRAM PAGE
 
@@ -333,18 +373,28 @@ class MainWindow(QMainWindow):
 
         self.editCollegeDialog.close()
 
+    def deleteCollege(self):
+        selectedRow = self.ui.collegeTable.currentRow()
+
+        if selectedRow == -1:
+            QMessageBox.warning(self, "No college selected.", "Please select a college to delete.")
+            return
+        
+        collegeSelected = self.ui.collegeTable.item(selectedRow, 0).text()
+
+        confirm = QMessageBox.question(self, "Delete College", f"Are you sure you want to delete college {collegeSelected}?",
+        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,)
+
+        if confirm == QMessageBox.StandardButton.Yes:
+            self.ui.collegeTable.removeRow(selectedRow)
+            QMessageBox.information(self, "College Deleted", "College has been deleted successfully.")
+
 # end of COLLEGE PAGE
 
 
 
     def clearForm(self):
         pass
-
-    def deleteStudent(self):
-        pass
-        #selectedRow = self.ui.studentTable.currentRow()
-        
-        #if selectedRow != 1:
             
 
     def setStylesheetfile(self):
