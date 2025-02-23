@@ -2,7 +2,7 @@ from main_screen import Ui_MainWindow
 from edit_student_dialog import Ui_editStudentDialog
 from edit_program_dialog import Ui_editProgramDialog
 from edit_college_dialog import Ui_editCollegeDialog
-from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedWidget, QTableWidget, QHeaderView, QTableWidgetItem, QMessageBox, QDialog
+from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidget, QHeaderView, QTableWidgetItem, QMessageBox, QDialog
 from PyQt6.QtCore import QRegularExpression
 from PyQt6.QtGui import  QRegularExpressionValidator
 from pathlib import Path
@@ -19,7 +19,6 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Student Information System")
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -104,10 +103,29 @@ class MainWindow(QMainWindow):
         self.ui.programTable.setSortingEnabled(True)
         self.ui.collegeTable.setSortingEnabled(True)
 
-        # validator
+        # validators
         student_id_regex = QRegularExpression(r"^\d{4}-\d{4}$")
         student_id_validator = QRegularExpressionValidator(student_id_regex, self.ui.student_id)
         self.ui.lineEdit_12.setValidator(student_id_validator)
+
+        program_code_regex = QRegularExpression(r"[A-Za-z ]{2,8}$")
+        program_code_validator = QRegularExpressionValidator(program_code_regex, self.ui.program_code)
+        self.ui.lineEdit_21.setValidator(program_code_validator)
+
+        college_code_regex = QRegularExpression(r"[A-Za-z ]{2,6}$")
+        college_code_validator = QRegularExpressionValidator(college_code_regex, self.ui.college_code)
+        self.ui.lineEdit_16.setValidator(college_code_validator)
+
+        name_regex = QRegularExpression(r"[A-Za-z ]{1,30}$")
+        name_validator = QRegularExpressionValidator(name_regex, self)
+        self.ui.lineEdit_11.setValidator(name_validator)
+        self.ui.lineEdit_10.setValidator(name_validator)
+        self.ui.lineEdit_18.setValidator(name_validator)
+        self.ui.lineEdit_15.setValidator(name_validator)
+
+
+
+
 
         # tables
         self.ui.studentTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)  # Disable editing
@@ -316,6 +334,12 @@ class MainWindow(QMainWindow):
             QMessageBox.warning(self, "All fields are required", "Please fill out all fields.")
             return
 
+        # to prevent duplicate program codes
+        for program in self.programs:
+            if program[0] == program_code:
+                QMessageBox.warning(self, "Duplicate Program Code", "A program with this code already exists.")
+                return
+
         new_program = [program_code, program_name, program_college]
         self.programs.append(new_program)
         self.saveProgramData()
@@ -323,7 +347,7 @@ class MainWindow(QMainWindow):
 
         if self.ui.comboBox_16.findText(program_code) == -1:
             self.ui.comboBox_16.addItem(program_code) # adds program to combobox in add student form
-
+       
         QMessageBox.information(self, "Program Added", "Program has been added successfully.")
         
 
@@ -455,6 +479,12 @@ class MainWindow(QMainWindow):
         if not college_code or not college_name:
             QMessageBox.warning(self, "All fields are required.", "Please fill out all fields.")
             return
+
+        # to prevent duplicate college codes
+        for college in self.colleges:
+            if college[0] == college_code:
+                QMessageBox.warning(self, "Duplicate College Code", "A college with this code already exists.")
+                return
 
         new_college = [college_code, college_name]
         self.colleges.append(new_college)
