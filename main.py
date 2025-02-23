@@ -39,14 +39,12 @@ class MainWindow(QMainWindow):
         self.programs = []
 
         # changing pages
-        self.ui.homeButton1.clicked.connect(lambda: self.changePage(0))
-        self.ui.homeButton2.clicked.connect(lambda: self.changePage(0))
-        self.ui.studentButton1.clicked.connect(lambda: self.changePage(1))
-        self.ui.studentButton2.clicked.connect(lambda: self.changePage(1))
-        self.ui.programButton1.clicked.connect(lambda: self.changePage(2))
-        self.ui.programButton2.clicked.connect(lambda: self.changePage(2))
-        self.ui.collegeButton1.clicked.connect(lambda: self.changePage(3))
-        self.ui.collegeButton2.clicked.connect(lambda: self.changePage(3))
+        self.ui.studentButton1.clicked.connect(lambda: self.changePage(0))
+        self.ui.studentButton2.clicked.connect(lambda: self.changePage(0))
+        self.ui.programButton1.clicked.connect(lambda: self.changePage(1))
+        self.ui.programButton2.clicked.connect(lambda: self.changePage(1))
+        self.ui.collegeButton1.clicked.connect(lambda: self.changePage(2))
+        self.ui.collegeButton2.clicked.connect(lambda: self.changePage(2))
 
         # initializing student data
         self.ui.student_id = self.ui.lineEdit_12
@@ -81,7 +79,7 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_50.clicked.connect(self.deleteCollege)
 
         # connecting search buttons to search functions
-        self.ui.searchButton_1.clicked.connect(self.searchStudent)
+        self.ui.lineEdit_19.textChanged.connect(self.searchStudent)
         self.ui.searchButton_2.clicked.connect(self.searchProgram)
         self.ui.searchButton_3.clicked.connect(self.searchCollege)
 
@@ -120,6 +118,17 @@ class MainWindow(QMainWindow):
             QMessageBox.warning(self, "All fields are required", "Please fill out all fields.")
             return
 
+        # to prevent users from entering invalid id numbers
+        if not self.ui.student_id.hasAcceptableInput():
+            QMessageBox.warning(self, "Invalid ID Number", "The ID number must be in the format YYYY-NNNN")
+            return
+
+        # to prevent duplicate student id numbers
+        for student in self.students:
+            if student[0] == student_id:
+                QMessageBox.warning(self, "Duplicate Student ID", "A student with this ID already exists.")
+                return
+
         new_student = [student_id, student_Fname, student_Lname, student_gender, student_yearlevel, student_program]
         self.students.append(new_student)
         self.saveStudentData()
@@ -147,7 +156,9 @@ class MainWindow(QMainWindow):
         for row, student in enumerate(self.students):
             for col, data in enumerate(student):
                 self.ui.studentTable.setItem(row, col, QTableWidgetItem(data))
-        self.ui.studentTable.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.ResizeToContents)
+        self.ui.studentTable.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.ResizeToContents) 
+        self.ui.studentTable.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)  
+        self.ui.studentTable.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeMode.Stretch)
 
     def editStudent(self):
         selectedRow = self.ui.studentTable.currentRow()
@@ -246,6 +257,22 @@ class MainWindow(QMainWindow):
             else:
                 self.ui.studentTable.setRowHidden(row, True) 
 
+        # If search text is empty, reveal all hidden rows
+        if not search_text:
+            for row in range(self.ui.studentTable.rowCount()):
+                self.ui.studentTable.setRowHidden(row, False)
+
+    def clearStudentForm(self):
+        self.ui.student_id.clear()
+        self.ui.student_Fname.clear()
+        self.ui.student_Lname.clear()
+        self.ui.student_gender.setCurrentIndex(0)
+        self.ui.student_yearlevel.setCurrentIndex(0)
+        self.ui.student_program.setCurrentIndex(0)
+
+
+    # end of STUDENT PAGE
+
     # start of PROGRAM PAGE
 
     def addProgram(self):
@@ -267,6 +294,7 @@ class MainWindow(QMainWindow):
             self.ui.comboBox_16.addItem(program_code) # adds program to combobox in add student form
 
         QMessageBox.information(self, "Program Added", "Program has been added successfully.")
+        
 
     def saveProgramData(self):
         with open(programdb, 'w', newline='') as csvfile:
@@ -498,8 +526,6 @@ class MainWindow(QMainWindow):
 
     # end of College Page
 
-    def clearForm(self):
-        pass
 
     def setStylesheetfile(self):
         stylesheet_path = Path(__file__).parent / "navbar.qss"
