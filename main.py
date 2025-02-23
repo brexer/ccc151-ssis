@@ -109,6 +109,17 @@ class MainWindow(QMainWindow):
         student_id_validator = QRegularExpressionValidator(student_id_regex, self.ui.student_id)
         self.ui.lineEdit_12.setValidator(student_id_validator)
 
+        # tables
+        self.ui.studentTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)  # Disable editing
+        self.ui.studentTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)  # Allow single selection
+        self.ui.studentTable.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)  # Select entire rows
+        self.ui.programTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)  # Disable editing
+        self.ui.programTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)  # Allow single selection
+        self.ui.programTable.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)  # Select entire rows
+        self.ui.collegeTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)  # Disable editing
+        self.ui.collegeTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)  # Allow single selection
+        self.ui.collegeTable.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)  # Select entire rows
+
 
     def changePage(self, index):
         self.ui.stackedWidget.setCurrentIndex(index)

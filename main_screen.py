@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'main_screen.ui'
+# Form implementation generated from reading ui file '.\main_screen.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.0
 #
@@ -395,6 +395,10 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(15)
         sizePolicy.setHeightForWidth(self.studentTable.sizePolicy().hasHeightForWidth())
         self.studentTable.setSizePolicy(sizePolicy)
+        self.studentTable.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
+        self.studentTable.setEditTriggers(QtWidgets.QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.studentTable.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.NoSelection)
+        self.studentTable.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectItems)
         self.studentTable.setObjectName("studentTable")
         self.studentTable.setColumnCount(6)
         self.studentTable.setRowCount(0)
@@ -678,8 +682,12 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(15)
         sizePolicy.setHeightForWidth(self.programTable.sizePolicy().hasHeightForWidth())
         self.programTable.setSizePolicy(sizePolicy)
+        self.programTable.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
         self.programTable.setEditTriggers(QtWidgets.QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.programTable.setTabKeyNavigation(True)
+        self.programTable.setProperty("showDropIndicator", True)
         self.programTable.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.NoSelection)
+        self.programTable.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectItems)
         self.programTable.setObjectName("programTable")
         self.programTable.setColumnCount(3)
         self.programTable.setRowCount(0)
@@ -712,6 +720,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_20 = QtWidgets.QVBoxLayout(self.widget_11)
         self.verticalLayout_20.setObjectName("verticalLayout_20")
         self.widget_4 = QtWidgets.QWidget(parent=self.widget_11)
+        self.widget_4.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
         self.widget_4.setObjectName("widget_4")
         self.frame_11 = QtWidgets.QFrame(parent=self.widget_4)
         self.frame_11.setGeometry(QtCore.QRect(0, 0, 282, 171))
@@ -910,6 +919,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(15)
         sizePolicy.setHeightForWidth(self.collegeTable.sizePolicy().hasHeightForWidth())
         self.collegeTable.setSizePolicy(sizePolicy)
+        self.collegeTable.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
         self.collegeTable.setObjectName("collegeTable")
         self.collegeTable.setColumnCount(2)
         self.collegeTable.setRowCount(0)
@@ -985,7 +995,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         self.studentButton1.toggled['bool'].connect(self.studentButton2.setChecked) # type: ignore
         self.programButton1.toggled['bool'].connect(self.programButton2.setChecked) # type: ignore
         self.collegeButton1.toggled['bool'].connect(self.collegeButton2.setChecked) # type: ignore

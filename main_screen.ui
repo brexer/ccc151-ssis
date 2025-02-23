@@ -634,7 +634,7 @@ QLabel {
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="studentPage">
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -936,6 +936,18 @@ QLabel {
                      <horstretch>0</horstretch>
                      <verstretch>15</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
+                   <property name="editTriggers">
+                    <set>QAbstractItemView::NoEditTriggers</set>
+                   </property>
+                   <property name="selectionMode">
+                    <enum>QAbstractItemView::NoSelection</enum>
+                   </property>
+                   <property name="selectionBehavior">
+                    <enum>QAbstractItemView::SelectItems</enum>
                    </property>
                    <column>
                     <property name="text">
@@ -1575,11 +1587,23 @@ QLabel {
                      <verstretch>15</verstretch>
                     </sizepolicy>
                    </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
                    <property name="editTriggers">
                     <set>QAbstractItemView::NoEditTriggers</set>
                    </property>
+                   <property name="tabKeyNavigation">
+                    <bool>true</bool>
+                   </property>
+                   <property name="showDropIndicator" stdset="0">
+                    <bool>true</bool>
+                   </property>
                    <property name="selectionMode">
                     <enum>QAbstractItemView::NoSelection</enum>
+                   </property>
+                   <property name="selectionBehavior">
+                    <enum>QAbstractItemView::SelectItems</enum>
                    </property>
                    <column>
                     <property name="text">
@@ -1639,6 +1663,9 @@ QLabel {
                 <layout class="QVBoxLayout" name="verticalLayout_20">
                  <item>
                   <widget class="QWidget" name="widget_4" native="true">
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
                    <widget class="QFrame" name="frame_11">
                     <property name="geometry">
                      <rect>
@@ -2058,6 +2085,9 @@ QLabel {
                      <horstretch>0</horstretch>
                      <verstretch>15</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
                    </property>
                    <column>
                     <property name="text">
