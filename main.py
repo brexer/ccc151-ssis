@@ -79,7 +79,7 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_50.clicked.connect(self.deleteCollege)
 
         # connecting search buttons to search functions
-        self.ui.lineEdit_19.textChanged.connect(self.searchStudent)
+        self.ui.searchButton_1.clicked.connect(self.searchStudent)
         self.ui.searchButton_2.clicked.connect(self.searchProgram)
         self.ui.searchButton_3.clicked.connect(self.searchCollege)
 
@@ -159,6 +159,9 @@ class MainWindow(QMainWindow):
         self.ui.studentTable.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.ResizeToContents) 
         self.ui.studentTable.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)  
         self.ui.studentTable.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeMode.Stretch)
+        self.ui.studentTable.horizontalHeader().setSectionResizeMode(3, QHeaderView.ResizeMode.ResizeToContents)
+        self.ui.studentTable.horizontalHeader().setSectionResizeMode(4, QHeaderView.ResizeMode.ResizeToContents)
+        self.ui.studentTable.horizontalHeader().setSectionResizeMode(5, QHeaderView.ResizeMode.ResizeToContents)
 
     def editStudent(self):
         selectedRow = self.ui.studentTable.currentRow()
@@ -319,6 +322,10 @@ class MainWindow(QMainWindow):
             for col, data in enumerate(program):
                 self.ui.programTable.setItem(row, col, QTableWidgetItem(data))
 
+        self.ui.programTable.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.ResizeToContents) 
+        self.ui.programTable.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
+        self.ui.programTable.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeMode.ResizeToContents)
+
     def editProgram(self):
         selectedRow = self.ui.programTable.currentRow()
 
@@ -446,6 +453,9 @@ class MainWindow(QMainWindow):
         for row, college in enumerate(self.colleges):
             for col, data in enumerate(college):
                 self.ui.collegeTable.setItem(row, col, QTableWidgetItem(data))
+
+        self.ui.collegeTable.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)  
+        self.ui.collegeTable.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
 
     def editCollege(self):
         selectedRow = self.ui.collegeTable.currentRow()
