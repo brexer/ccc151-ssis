@@ -45,6 +45,8 @@ class Ui_editStudentDialog(object):
         self.dialog_comboBox_3 = QtWidgets.QComboBox(parent=self.dialogFrame)
         self.dialog_comboBox_3.setGeometry(QtCore.QRect(110, 210, 91, 31))
         self.dialog_comboBox_3.setObjectName("dialog_comboBox_3")
+        self.dialog_comboBox_3.addItem("")
+        self.dialog_comboBox_3.addItem("")
         self.dialog_comboBox_2 = QtWidgets.QComboBox(parent=self.dialogFrame)
         self.dialog_comboBox_2.setGeometry(QtCore.QRect(110, 170, 91, 31))
         self.dialog_comboBox_2.setObjectName("dialog_comboBox_2")

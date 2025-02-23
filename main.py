@@ -22,7 +22,6 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Student Information System")
 
         self.ui = Ui_MainWindow()
-        self.editStudentDialog_ui = Ui_editStudentDialog()
         self.ui.setupUi(self)
 
         self.setStylesheetfile()
@@ -151,6 +150,7 @@ class MainWindow(QMainWindow):
             writer.writerows(self.students)
 
     def loadStudentData(self):
+        self.students.clear()
         self.students = []
         if not Path(studentdb).exists():
             return
@@ -187,8 +187,14 @@ class MainWindow(QMainWindow):
         student_program = self.ui.studentTable.item(selectedRow, 5).text()
 
         self.editStudentDialog = QDialog()
-        #self.editStudentDialog_ui = Ui_editStudentDialog()
+        self.editStudentDialog_ui = Ui_editStudentDialog()
         self.editStudentDialog_ui.setupUi(self.editStudentDialog)
+
+        # populate dialog combobox with existing program codes
+        self.editStudentDialog_ui.dialog_comboBox_3.clear()
+        for i in range(self.ui.comboBox_16.count()):
+            program_code = self.ui.comboBox_16.itemText(i)
+            self.editStudentDialog_ui.dialog_comboBox_3.addItem(program_code)
 
         self.editStudentDialog_ui.dialog_lineEdit_1.setText(student_id)
         self.editStudentDialog_ui.dialog_lineEdit_2.setText(student_Fname)
@@ -218,6 +224,7 @@ class MainWindow(QMainWindow):
         self.ui.studentTable.setItem(selectedRow, 5, QTableWidgetItem(student_program))
 
         self.students[selectedRow] = [student_id, student_Fname, student_Lname, student_gender, student_yearlevel, student_program]
+        self.updateStudentTable()
         self.saveStudentData()
 
         self.editStudentDialog.close()
@@ -238,6 +245,7 @@ class MainWindow(QMainWindow):
             self.ui.studentTable.removeRow(selectedRow)
             self.students.pop(selectedRow)
             self.saveStudentData()
+            self.updateStudentTable()
             QMessageBox.information(self, "Student Deleted", "Student has been deleted successfully.")
 
     def searchStudent(self):
@@ -322,7 +330,6 @@ class MainWindow(QMainWindow):
             reader = csv.DictReader(csvfile)
             for row in reader:
                 self.programs.append([row["Code"], row["Name"], row["College"]])
-                #self.editStudentDialog_ui.dialog_comboBox_3.addItem(row["Code"]) # adds existing program to combobox in edit student form
                 self.ui.comboBox_16.addItem(row["Code"]) # adds existing program to add student combobox
 
     def updateProgramTable(self):
@@ -351,6 +358,12 @@ class MainWindow(QMainWindow):
         self.editProgramDialog_ui = Ui_editProgramDialog()
         self.editProgramDialog_ui.setupUi(self.editProgramDialog)
 
+        # populate dialog combobox with existing college codes
+        self.editProgramDialog_ui.dialog_comboBox_4.clear()
+        for i in range(self.ui.comboBox_26.count()):
+            college_code = self.ui.comboBox_26.itemText(i)
+            self.editProgramDialog_ui.dialog_comboBox_4.addItem(college_code)
+
         self.editProgramDialog_ui.dialog_lineEdit_6.setText(program_code)
         self.editProgramDialog_ui.dialog_lineEdit_7.setText(program_name)
         self.editProgramDialog_ui.dialog_comboBox_4.setCurrentText(program_college)
@@ -370,6 +383,7 @@ class MainWindow(QMainWindow):
         self.ui.programTable.setItem(selectedRow, 2, QTableWidgetItem(program_college))
 
         self.programs[selectedRow] = [program_code, program_name, program_college]
+        self.updateProgramTable()
         self.saveProgramData()
 
         self.editProgramDialog.close()
@@ -437,7 +451,6 @@ class MainWindow(QMainWindow):
         self.updateCollegeTable()
         
         if self.ui.comboBox_26.findText(college_code) == -1:
-            self.editProgramDialog_ui.dialog_comboBox_4.addItem(college_code) # adds college to combobox in edit program form
             self.ui.comboBox_26.addItem(college_code) # adds college to combobox in add program form
         
         QMessageBox.information(self, "College Added", "College has been added successfully.")
@@ -456,7 +469,6 @@ class MainWindow(QMainWindow):
             reader = csv.DictReader(csvfile)
             for row in reader:
                 self.colleges.append([row["Code"], row["Name"]])
-                #self.editProgramDialog_ui.dialog_comboBox_4.addItem(row["Code"]) # adds existing college to combobox in edit program form
                 self.ui.comboBox_26.addItem(row["Code"]) # adds existing college to add program combobox
 
     def updateCollegeTable(self):
@@ -499,6 +511,7 @@ class MainWindow(QMainWindow):
         self.ui.collegeTable.setItem(selectedRow, 1, QTableWidgetItem(college_name))
 
         self.colleges[selectedRow] = [college_code, college_name]
+        self.updateCollegeTable()
         self.saveCollegeData()
 
         self.editCollegeDialog.close()
