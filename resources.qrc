@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="imgs">
+    <file>imgs/refresh_white.png</file>
     <file>imgs/add_white.png</file>
     <file>imgs/delete_white.png</file>
     <file>imgs/edit_white.png</file>

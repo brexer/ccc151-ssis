@@ -45,8 +45,6 @@ class Ui_editStudentDialog(object):
         self.dialog_comboBox_3 = QtWidgets.QComboBox(parent=self.dialogFrame)
         self.dialog_comboBox_3.setGeometry(QtCore.QRect(110, 210, 91, 31))
         self.dialog_comboBox_3.setObjectName("dialog_comboBox_3")
-        self.dialog_comboBox_3.addItem("")
-        self.dialog_comboBox_3.addItem("")
         self.dialog_comboBox_2 = QtWidgets.QComboBox(parent=self.dialogFrame)
         self.dialog_comboBox_2.setGeometry(QtCore.QRect(110, 170, 91, 31))
         self.dialog_comboBox_2.setObjectName("dialog_comboBox_2")
@@ -127,8 +125,6 @@ class Ui_editStudentDialog(object):
     def retranslateUi(self, editStudentDialog):
         _translate = QtCore.QCoreApplication.translate
         editStudentDialog.setWindowTitle(_translate("editStudentDialog", "Edit Student"))
-        self.dialog_comboBox_3.setItemText(0, _translate("editStudentDialog", "BSCS"))
-        self.dialog_comboBox_3.setItemText(1, _translate("editStudentDialog", "BSIT"))
         self.dialog_comboBox_2.setItemText(0, _translate("editStudentDialog", "First Year"))
         self.dialog_comboBox_2.setItemText(1, _translate("editStudentDialog", "Second Year"))
         self.dialog_comboBox_2.setItemText(2, _translate("editStudentDialog", "Third Year"))
