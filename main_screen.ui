@@ -545,6 +545,9 @@ QLabel {
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
+           <widget class="QWidget" name="widget_15" native="true"/>
+          </item>
+          <item>
            <widget class="QPushButton" name="menuButton">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -634,7 +637,7 @@ QLabel {
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="studentPage">
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -1141,6 +1144,9 @@ QLabel {
                        <width>161</width>
                        <height>31</height>
                       </rect>
+                     </property>
+                     <property name="text">
+                      <string/>
                      </property>
                     </widget>
                     <widget class="QLineEdit" name="lineEdit_12">

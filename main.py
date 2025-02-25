@@ -179,7 +179,6 @@ class MainWindow(QMainWindow):
             writer.writerows(self.students)
 
     def loadStudentData(self):
-        self.students.clear()
         self.students = []
         if not Path(studentdb).exists():
             return
@@ -266,11 +265,18 @@ class MainWindow(QMainWindow):
             return
         
         studentSelected = self.ui.studentTable.item(selectedRow, 0).text()
+        
+        msgBox = QMessageBox(self)
+        msgBox.setWindowTitle("Delete Student")
+        msgBox.setText(f"Are you sure you want to delete student {studentSelected}?")
+        msgBox.setIcon(QMessageBox.Icon.Warning)
 
-        confirm = QMessageBox.question(self, "Delete Student", f"Are you sure you want to delete student {studentSelected}?",
-        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,)
+        yesButton = msgBox.addButton("Delete", QMessageBox.ButtonRole.AcceptRole)
+        noButton = msgBox.addButton("Cancel", QMessageBox.ButtonRole.RejectRole)
 
-        if confirm == QMessageBox.StandardButton.Yes:
+        msgBox.exec()
+
+        if msgBox.clickedButton() == yesButton:
             self.ui.studentTable.removeRow(selectedRow)
             self.students.pop(selectedRow)
             self.saveStudentData()
@@ -432,15 +438,33 @@ class MainWindow(QMainWindow):
         
         programSelected = self.ui.programTable.item(selectedRow, 0).text()
 
-        confirm = QMessageBox.question(self, "Delete Program", f"Are you sure you want to delete program {programSelected}?",
-        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,)
+        msgBox = QMessageBox(self)
+        msgBox.setWindowTitle("Delete Program")
+        msgBox.setText(f"Are you sure you want to delete program {programSelected}?")
+        msgBox.setIcon(QMessageBox.Icon.Warning)
 
-        if confirm == QMessageBox.StandardButton.Yes:
+        yesButton = msgBox.addButton("Delete", QMessageBox.ButtonRole.AcceptRole)
+        noButton = msgBox.addButton("Cancel", QMessageBox.ButtonRole.RejectRole)
+
+        msgBox.exec()
+
+        if msgBox.clickedButton() == yesButton:
             self.ui.programTable.removeRow(selectedRow)
             self.programs.pop(selectedRow)
             self.saveProgramData()
             QMessageBox.information(self, "Program Deleted", "Program has been deleted successfully.")
 
+            # set student program to N/A if the program is deleted
+            for student in self.students:
+                if student[5] == programSelected:
+                    student[5] = "N/A"
+                    
+                    self.saveStudentData()
+                    self.updateStudentTable()
+                    self.updateComboBoxes()
+
+
+            
     def searchProgram(self):
         search_text = self.ui.lineEdit_20.text().strip().lower()
         search_by = self.ui.comboBox_30.currentText()
@@ -565,15 +589,31 @@ class MainWindow(QMainWindow):
             return
         
         collegeSelected = self.ui.collegeTable.item(selectedRow, 0).text()
+        
+        msgBox = QMessageBox(self)
+        msgBox.setWindowTitle("Delete Student")
+        msgBox.setText(f"Are you sure you want to delete student {collegeSelected}?")
+        msgBox.setIcon(QMessageBox.Icon.Warning)
 
-        confirm = QMessageBox.question(self, "Delete College", f"Are you sure you want to delete college {collegeSelected}?",
-        QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,)
+        yesButton = msgBox.addButton("Delete", QMessageBox.ButtonRole.AcceptRole)
+        noButton = msgBox.addButton("Cancel", QMessageBox.ButtonRole.RejectRole)
 
-        if confirm == QMessageBox.StandardButton.Yes:
+        msgBox.exec()
+
+        if msgBox.clickedButton() == yesButton:
             self.ui.collegeTable.removeRow(selectedRow)
             self.colleges.pop(selectedRow)
             self.saveCollegeData()
             QMessageBox.information(self, "College Deleted", "College has been deleted successfully.")
+
+            # set program college to N/A if the college is deleted
+            for program in self.programs:
+                if program[2] == collegeSelected:
+                    program[2] = "N/A"
+
+            self.saveProgramData()
+            self.updateProgramTable()
+            self.updateComboBoxes()
 
     def searchCollege(self):
         search_text = self.ui.lineEdit_22.text().strip().lower()
@@ -602,9 +642,19 @@ class MainWindow(QMainWindow):
 
     # end of College Page
 
+    def updateComboBoxes(self):
+        self.ui.comboBox_16.clear()
+        self.ui.comboBox_26.clear()
+
+        for program in self.programs:
+            self.ui.comboBox_16.addItem(program[0])
+
+        for college in self.colleges:
+            self.ui.comboBox_26.addItem(college[0])
+
 
     def setStylesheetfile(self):
-        stylesheet_path = Path(__file__).parent / "navbar.qss"
+        stylesheet_path = Path(__file__).parent / "style.qss"
         if stylesheet_path.exists():
             with open(stylesheet_path, "r") as file:
                 stylesheet = file.read()

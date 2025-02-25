@@ -47,6 +47,13 @@ QPushButton:checked {
     border-bottom: 2px solid #F9B17A; 
 }
 
+#menuButton:checked {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
 #frame_highlight {
     background-color: #F9B17A; 
     border-radius: 5px;
@@ -121,4 +128,43 @@ QComboBox QAbstractItemView {
 
 QTableWidget, QHeaderView::section {
     border-radius: 0px;
+}
+
+QMessageBox QPushButton {
+    min-width: 60px;
+    min-height: 20px;
+    font-size: 14px;
+    padding: 2px 4px;
+    background-color: #F0F0F0;
+    color: #2D3250;  
+    border: 1px solid #676F9D;
+    border-radius: 5px;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #F9B17A;
+    border: 1px solid #F9B17A;
+    color: #2D3250;
+}
+
+QMessageBox QPushButton[text="Delete"],
+QMessageBox QPushButton[text="Yes"] {  
+    background-color: #D32F2F;
+    color: #FFFFFF;
+    border: 1px solid #B71C1C;
+}
+
+QMessageBox QPushButton[text="Delete"]:hover,
+QMessageBox QPushButton[text="Yes"]:hover {
+    background-color: #B71C1C; 
+}
+
+#yesButton {
+    background-color: #D32F2F; 
+    color: white;
+    border: 1px solid #B71C1C;
+    min-width: 50px;
+    min-height: 15px;
+    border-radius: 5px;
+    padding: 0px;
 }
