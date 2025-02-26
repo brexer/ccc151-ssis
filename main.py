@@ -2,9 +2,9 @@ from main_screen import Ui_MainWindow
 from edit_student_dialog import Ui_editStudentDialog
 from edit_program_dialog import Ui_editProgramDialog
 from edit_college_dialog import Ui_editCollegeDialog
-from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidget, QHeaderView, QTableWidgetItem, QMessageBox, QDialog
+from PyQt6.QtWidgets import QApplication, QMainWindow, QTableWidget, QHeaderView, QTableWidgetItem, QMessageBox, QDialog, QToolTip
 from PyQt6.QtCore import QRegularExpression
-from PyQt6.QtGui import  QRegularExpressionValidator
+from PyQt6.QtGui import  QRegularExpressionValidator, QFont
 from pathlib import Path
 import resources
 import sys
@@ -123,7 +123,22 @@ class MainWindow(QMainWindow):
         self.ui.lineEdit_18.setValidator(name_validator)
         self.ui.lineEdit_15.setValidator(name_validator)
 
+        # tooltips
+        QToolTip.setFont(QFont("Verdana", 8))
+        self.ui.pushButton_52.setToolTip("Add Student")
+        self.ui.pushButton_43.setToolTip("Edit Student")
+        self.ui.pushButton_44.setToolTip("Delete Student")
+        self.ui.refreshStudentButton.setToolTip("Clear Search")
 
+        self.ui.pushButton_51.setToolTip("Add Program")
+        self.ui.pushButton_46.setToolTip("Edit Program")
+        self.ui.pushButton_47.setToolTip("Delete Program")
+        self.ui.refreshProgramButton.setToolTip("Clear Search")
+
+        self.ui.pushButton_53.setToolTip("Add College")
+        self.ui.pushButton_49.setToolTip("Edit College")
+        self.ui.pushButton_50.setToolTip("Delete College")
+        self.ui.refreshCollegeButton.setToolTip("Clear Search")
 
 
 
@@ -131,12 +146,12 @@ class MainWindow(QMainWindow):
         self.ui.studentTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)  # Disable editing
         self.ui.studentTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)  # Allow single selection
         self.ui.studentTable.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)  # Select entire rows
-        self.ui.programTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)  # Disable editing
-        self.ui.programTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)  # Allow single selection
-        self.ui.programTable.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)  # Select entire rows
-        self.ui.collegeTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)  # Disable editing
-        self.ui.collegeTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)  # Allow single selection
-        self.ui.collegeTable.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)  # Select entire rows
+        self.ui.programTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)  
+        self.ui.programTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection) 
+        self.ui.programTable.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
+        self.ui.collegeTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers) 
+        self.ui.collegeTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection) 
+        self.ui.collegeTable.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows) 
 
 
     def changePage(self, index):
@@ -300,7 +315,7 @@ class MainWindow(QMainWindow):
         columnSelected = self.search_by_options.get(search_by, -1)
 
         # If no valid column is selected, show an error and return
-        if columnSelected == -1:
+        if columnSelected == -1 and search_text:
             QMessageBox.warning(self, "Invalid Search Criteria", "Please select a valid search criteria.")
             return
 
@@ -433,7 +448,7 @@ class MainWindow(QMainWindow):
         selectedRow = self.ui.programTable.currentRow()
 
         if selectedRow == -1:
-            QMessageBox.warning(self, "No program selected.", "Please select a program to delete.")
+            QMessageBox.warning(self, "No program selected", "Please select a program to delete.")
             return
         
         programSelected = self.ui.programTable.item(selectedRow, 0).text()
@@ -479,7 +494,7 @@ class MainWindow(QMainWindow):
         columnSelected = self.search_by_options.get(search_by, -1)
 
         # If no valid column is selected, show an error and return
-        if columnSelected == -1:
+        if columnSelected == -1 and search_text:
             QMessageBox.warning(self, "Invalid Search Criteria", "Please select a valid search criteria.")
             return
 
@@ -585,7 +600,7 @@ class MainWindow(QMainWindow):
         selectedRow = self.ui.collegeTable.currentRow()
 
         if selectedRow == -1:
-            QMessageBox.warning(self, "No college selected.", "Please select a college to delete.")
+            QMessageBox.warning(self, "No college selected", "Please select a college to delete.")
             return
         
         collegeSelected = self.ui.collegeTable.item(selectedRow, 0).text()
@@ -628,7 +643,7 @@ class MainWindow(QMainWindow):
         columnSelected = self.search_by_options.get(search_by, -1)
 
         # If no valid column is selected, show an error and return
-        if columnSelected == -1:
+        if columnSelected == -1 and search_text:
             QMessageBox.warning(self, "Invalid Search Criteria", "Please select a valid search criteria.")
             return
 

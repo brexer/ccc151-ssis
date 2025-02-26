@@ -637,7 +637,7 @@ QLabel {
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="studentPage">
           <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -703,10 +703,11 @@ QLabel {
                       <property name="font">
                        <font>
                         <family>Verdana</family>
+                        <pointsize>8</pointsize>
                        </font>
                       </property>
                       <property name="placeholderText">
-                       <string>Search..</string>
+                       <string/>
                       </property>
                       <item>
                        <property name="text">
@@ -1371,10 +1372,11 @@ QLabel {
                       <property name="font">
                        <font>
                         <family>Verdana</family>
+                        <pointsize>8</pointsize>
                        </font>
                       </property>
                       <property name="placeholderText">
-                       <string>Search..</string>
+                       <string/>
                       </property>
                       <item>
                        <property name="text">
@@ -1875,10 +1877,11 @@ QLabel {
                       <property name="font">
                        <font>
                         <family>Verdana</family>
+                        <pointsize>8</pointsize>
                        </font>
                       </property>
                       <property name="placeholderText">
-                       <string>Search..</string>
+                       <string/>
                       </property>
                       <item>
                        <property name="text">
