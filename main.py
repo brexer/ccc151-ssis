@@ -108,11 +108,11 @@ class MainWindow(QMainWindow):
         student_id_validator = QRegularExpressionValidator(student_id_regex, self.ui.student_id)
         self.ui.lineEdit_12.setValidator(student_id_validator)
 
-        program_code_regex = QRegularExpression(r"[A-Za-z ]{2,8}$")
+        program_code_regex = QRegularExpression(r"[A-Za-z ]{2,10}$")
         program_code_validator = QRegularExpressionValidator(program_code_regex, self.ui.program_code)
         self.ui.lineEdit_21.setValidator(program_code_validator)
 
-        college_code_regex = QRegularExpression(r"[A-Za-z ]{2,6}$")
+        college_code_regex = QRegularExpression(r"[A-Za-z ]{2,8}$")
         college_code_validator = QRegularExpressionValidator(college_code_regex, self.ui.college_code)
         self.ui.lineEdit_16.setValidator(college_code_validator)
 
@@ -232,6 +232,15 @@ class MainWindow(QMainWindow):
         self.editStudentDialog = QDialog()
         self.editStudentDialog_ui = Ui_editStudentDialog()
         self.editStudentDialog_ui.setupUi(self.editStudentDialog)
+
+        # validators
+        student_id_regex = QRegularExpression(r"^\d{4}-\d{4}$")
+        student_id_validator = QRegularExpressionValidator(student_id_regex, self.ui.student_id)
+        self.editStudentDialog_ui.dialog_lineEdit_1.setValidator(student_id_validator)
+        name_regex = QRegularExpression(r"[A-Za-z ]{1,30}$")
+        name_validator = QRegularExpressionValidator(name_regex, self)
+        self.editStudentDialog_ui.dialog_lineEdit_2.setValidator(name_validator)
+        self.editStudentDialog_ui.dialog_lineEdit_3.setValidator(name_validator)
 
         # populate dialog combobox with existing program codes
         self.editStudentDialog_ui.dialog_comboBox_3.clear()
@@ -410,9 +419,18 @@ class MainWindow(QMainWindow):
         program_name = self.ui.programTable.item(selectedRow, 1).text()
         program_college = self.ui.programTable.item(selectedRow, 2).text()
 
+
         self.editProgramDialog = QDialog()
         self.editProgramDialog_ui = Ui_editProgramDialog()
         self.editProgramDialog_ui.setupUi(self.editProgramDialog)
+
+         # validator
+        program_code_regex = QRegularExpression(r"[A-Za-z ]{2,10}$")
+        program_code_validator = QRegularExpressionValidator(program_code_regex, self.ui.program_code)
+        self.editProgramDialog_ui.dialog_lineEdit_6.setValidator(program_code_validator)
+        name_regex = QRegularExpression(r"[A-Za-z ]{1,30}$")
+        name_validator = QRegularExpressionValidator(name_regex, self)
+        self.editProgramDialog_ui.dialog_lineEdit_7.setValidator(name_validator)
 
         # populate dialog combobox with existing college codes
         self.editProgramDialog_ui.dialog_comboBox_4.clear()
@@ -574,6 +592,14 @@ class MainWindow(QMainWindow):
         self.editCollegeDialog = QDialog()
         self.editCollegeDialog_ui = Ui_editCollegeDialog()
         self.editCollegeDialog_ui.setupUi(self.editCollegeDialog)
+
+        # validators
+        college_code_regex = QRegularExpression(r"[A-Za-z ]{2,8}$")
+        college_code_validator = QRegularExpressionValidator(college_code_regex, self.ui.college_code)
+        self.editCollegeDialog_ui.dialog_lineEdit_4.setValidator(college_code_validator)
+        name_regex = QRegularExpression(r"[A-Za-z ]{1,30}$")
+        name_validator = QRegularExpressionValidator(name_regex, self)
+        self.editCollegeDialog_ui.dialog_lineEdit_5.setValidator(name_validator)
 
         self.editCollegeDialog_ui.dialog_lineEdit_4.setText(college_code)
         self.editCollegeDialog_ui.dialog_lineEdit_5.setText(college_name)

@@ -123,7 +123,7 @@ QComboBox QAbstractItemView {
     background-color: #FFFFFF;
     color: #2D3250;
     selection-background-color: #F9B17A;
-    selection-color: #F9B17A;
+    selection-color: #2D3250;
 }
 
 QTableWidget, QHeaderView::section {
