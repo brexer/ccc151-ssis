@@ -116,7 +116,7 @@ class MainWindow(QMainWindow):
         college_code_validator = QRegularExpressionValidator(college_code_regex, self.ui.college_code)
         self.ui.lineEdit_16.setValidator(college_code_validator)
 
-        name_regex = QRegularExpression(r"[A-Za-z ]{1,30}$")
+        name_regex = QRegularExpression(r"[A-Za-z ]{1,60}$")
         name_validator = QRegularExpressionValidator(name_regex, self)
         self.ui.lineEdit_11.setValidator(name_validator)
         self.ui.lineEdit_10.setValidator(name_validator)
@@ -185,6 +185,9 @@ class MainWindow(QMainWindow):
         self.students.append(new_student)
         self.saveStudentData()
         self.updateStudentTable()
+        self.ui.lineEdit_12.clear()
+        self.ui.lineEdit_11.clear()
+        self.ui.lineEdit_10.clear()
         QMessageBox.information(self, "Student Added", "Student has been added successfully.")
 
     def saveStudentData(self):
@@ -237,7 +240,7 @@ class MainWindow(QMainWindow):
         student_id_regex = QRegularExpression(r"^\d{4}-\d{4}$")
         student_id_validator = QRegularExpressionValidator(student_id_regex, self.ui.student_id)
         self.editStudentDialog_ui.dialog_lineEdit_1.setValidator(student_id_validator)
-        name_regex = QRegularExpression(r"[A-Za-z ]{1,30}$")
+        name_regex = QRegularExpression(r"[A-Za-z ]{1,60}$")
         name_validator = QRegularExpressionValidator(name_regex, self)
         self.editStudentDialog_ui.dialog_lineEdit_2.setValidator(name_validator)
         self.editStudentDialog_ui.dialog_lineEdit_3.setValidator(name_validator)
@@ -377,6 +380,9 @@ class MainWindow(QMainWindow):
 
         if self.ui.comboBox_16.findText(program_code) == -1:
             self.ui.comboBox_16.addItem(program_code) # adds program to combobox in add student form
+
+        self.ui.lineEdit_21.clear()
+        self.ui.lineEdit_18.clear()
        
         QMessageBox.information(self, "Program Added", "Program has been added successfully.")
         
@@ -428,7 +434,7 @@ class MainWindow(QMainWindow):
         program_code_regex = QRegularExpression(r"[A-Za-z ]{2,10}$")
         program_code_validator = QRegularExpressionValidator(program_code_regex, self.ui.program_code)
         self.editProgramDialog_ui.dialog_lineEdit_6.setValidator(program_code_validator)
-        name_regex = QRegularExpression(r"[A-Za-z ]{1,30}$")
+        name_regex = QRegularExpression(r"[A-Za-z ]{1,60}$")
         name_validator = QRegularExpressionValidator(name_regex, self)
         self.editProgramDialog_ui.dialog_lineEdit_7.setValidator(name_validator)
 
@@ -551,6 +557,9 @@ class MainWindow(QMainWindow):
         if self.ui.comboBox_26.findText(college_code) == -1:
             self.ui.comboBox_26.addItem(college_code) # adds college to combobox in add program form
         
+        self.ui.lineEdit_16.clear()
+        self.ui.lineEdit_15.clear()
+
         QMessageBox.information(self, "College Added", "College has been added successfully.")
 
     def saveCollegeData(self):
@@ -597,7 +606,7 @@ class MainWindow(QMainWindow):
         college_code_regex = QRegularExpression(r"[A-Za-z ]{2,8}$")
         college_code_validator = QRegularExpressionValidator(college_code_regex, self.ui.college_code)
         self.editCollegeDialog_ui.dialog_lineEdit_4.setValidator(college_code_validator)
-        name_regex = QRegularExpression(r"[A-Za-z ]{1,30}$")
+        name_regex = QRegularExpression(r"[A-Za-z ]{1,60}$")
         name_validator = QRegularExpressionValidator(name_regex, self)
         self.editCollegeDialog_ui.dialog_lineEdit_5.setValidator(name_validator)
 
