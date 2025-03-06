@@ -8,8 +8,8 @@ from PyQt6.QtGui import  QRegularExpressionValidator, QFont
 from pathlib import Path
 import resources
 import sys
-import os
 import csv
+import os
 
 studentdb = "student.csv"
 collegedb = "college.csv"
@@ -18,7 +18,6 @@ programdb = "program.csv"
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -140,8 +139,6 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_50.setToolTip("Delete College")
         self.ui.refreshCollegeButton.setToolTip("Clear Search")
 
-
-
         # tables
         self.ui.studentTable.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)  # Disable editing
         self.ui.studentTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)  # Allow single selection
@@ -153,10 +150,10 @@ class MainWindow(QMainWindow):
         self.ui.collegeTable.setSelectionMode(QTableWidget.SelectionMode.SingleSelection) 
         self.ui.collegeTable.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows) 
 
-
     def changePage(self, index):
         self.ui.stackedWidget.setCurrentIndex(index)
 
+    # start of STUDENT PAGE
     def addStudent(self):
         student_id = self.ui.student_id.text().strip()
         student_Fname = self.ui.student_Fname.text().strip().title()
@@ -300,7 +297,6 @@ class MainWindow(QMainWindow):
 
         yesButton = msgBox.addButton("Delete", QMessageBox.ButtonRole.AcceptRole)
         noButton = msgBox.addButton("Cancel", QMessageBox.ButtonRole.RejectRole)
-
         msgBox.exec()
 
         if msgBox.clickedButton() == yesButton:
@@ -351,12 +347,9 @@ class MainWindow(QMainWindow):
         self.ui.student_gender.setCurrentIndex(0)
         self.ui.student_yearlevel.setCurrentIndex(0)
         self.ui.student_program.setCurrentIndex(0)
-
-
     # end of STUDENT PAGE
 
     # start of PROGRAM PAGE
-
     def addProgram(self):
         program_code = self.ui.program_code.text().strip().upper()
         program_name = self.ui.program_name.text().strip().title()
@@ -382,8 +375,7 @@ class MainWindow(QMainWindow):
             self.ui.comboBox_16.addItem(program_code) # adds program to combobox in add student form
 
         self.ui.lineEdit_21.clear()
-        self.ui.lineEdit_18.clear()
-       
+        self.ui.lineEdit_18.clear()      
         QMessageBox.information(self, "Program Added", "Program has been added successfully.")
         
 
@@ -425,7 +417,6 @@ class MainWindow(QMainWindow):
         program_name = self.ui.programTable.item(selectedRow, 1).text()
         program_college = self.ui.programTable.item(selectedRow, 2).text()
 
-
         self.editProgramDialog = QDialog()
         self.editProgramDialog_ui = Ui_editProgramDialog()
         self.editProgramDialog_ui.setupUi(self.editProgramDialog)
@@ -454,6 +445,7 @@ class MainWindow(QMainWindow):
         QMessageBox.information(self, "Program Updated", "Program has been updated successfully.")
 
     def updateCurrentProgram(self, selectedRow):
+        old_program_code = self.programs[selectedRow][0]
         program_code = self.editProgramDialog_ui.dialog_lineEdit_6.text().strip()
         program_name = self.editProgramDialog_ui.dialog_lineEdit_7.text().strip().title()
         program_college = self.editProgramDialog_ui.dialog_comboBox_4.currentText().upper()
@@ -463,6 +455,13 @@ class MainWindow(QMainWindow):
         self.ui.programTable.setItem(selectedRow, 2, QTableWidgetItem(program_college))
 
         self.programs[selectedRow] = [program_code, program_name, program_college]
+        for student in self.students:
+            if student[5] == old_program_code:
+                student[5] = program_code
+
+        self.updateStudentTable()
+        self.updateComboBoxes()
+        self.saveStudentData()
         self.updateProgramTable()
         self.saveProgramData()
 
@@ -484,7 +483,6 @@ class MainWindow(QMainWindow):
 
         yesButton = msgBox.addButton("Delete", QMessageBox.ButtonRole.AcceptRole)
         noButton = msgBox.addButton("Cancel", QMessageBox.ButtonRole.RejectRole)
-
         msgBox.exec()
 
         if msgBox.clickedButton() == yesButton:
@@ -501,8 +499,6 @@ class MainWindow(QMainWindow):
                     self.saveStudentData()
                     self.updateStudentTable()
                     self.updateComboBoxes()
-
-
             
     def searchProgram(self):
         search_text = self.ui.lineEdit_20.text().strip().lower()
@@ -529,11 +525,9 @@ class MainWindow(QMainWindow):
                 self.ui.programTable.setRowHidden(row, False)  
             else:
                 self.ui.programTable.setRowHidden(row, True)
-
     # end of PROGRAM PAGE
 
     # start of COLLEGE PAGE
-
     def addCollege(self):
         college_code = self.ui.college_code.text().strip().upper()
         college_name = self.ui.college_name.text().strip().title()
@@ -559,7 +553,6 @@ class MainWindow(QMainWindow):
         
         self.ui.lineEdit_16.clear()
         self.ui.lineEdit_15.clear()
-
         QMessageBox.information(self, "College Added", "College has been added successfully.")
 
     def saveCollegeData(self):
@@ -619,6 +612,7 @@ class MainWindow(QMainWindow):
         QMessageBox.information(self, "College Updated", "College has been updated successfully.")
 
     def updateCurrentCollege(self, selectedRow):
+        old_college_code = self.colleges[selectedRow][0]  
         college_code = self.editCollegeDialog_ui.dialog_lineEdit_4.text().strip().upper()
         college_name = self.editCollegeDialog_ui.dialog_lineEdit_5.text().strip().title()
 
@@ -626,6 +620,12 @@ class MainWindow(QMainWindow):
         self.ui.collegeTable.setItem(selectedRow, 1, QTableWidgetItem(college_name))
 
         self.colleges[selectedRow] = [college_code, college_name]
+        for program in self.programs:
+            if program[2] == old_college_code:  # If program's college matches old code, update it
+                program[2] = college_code
+        
+        self.updateProgramTable()
+        self.saveProgramData()
         self.updateCollegeTable()
         self.saveCollegeData()
 
@@ -647,7 +647,6 @@ class MainWindow(QMainWindow):
 
         yesButton = msgBox.addButton("Delete", QMessageBox.ButtonRole.AcceptRole)
         noButton = msgBox.addButton("Cancel", QMessageBox.ButtonRole.RejectRole)
-
         msgBox.exec()
 
         if msgBox.clickedButton() == yesButton:
@@ -689,7 +688,6 @@ class MainWindow(QMainWindow):
                 self.ui.collegeTable.setRowHidden(row, False)  
             else:
                 self.ui.collegeTable.setRowHidden(row, True)
-
     # end of College Page
 
     def updateComboBoxes(self):
@@ -701,7 +699,6 @@ class MainWindow(QMainWindow):
 
         for college in self.colleges:
             self.ui.comboBox_26.addItem(college[0])
-
 
     def setStylesheetfile(self):
         stylesheet_path = Path(__file__).parent / "style.qss"
